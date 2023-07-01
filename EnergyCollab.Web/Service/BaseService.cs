@@ -7,7 +7,7 @@ using static EnergyCollab.Web.Utility.SD;
 
 namespace EnergyCollab.Web.Service
 {
-    public class BaseService
+    public class BaseService : IBaseService
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ITokenProvider _tokenProvider;

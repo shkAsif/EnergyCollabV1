@@ -1,9 +1,9 @@
 ﻿namespace EnergyCollab.Web.Service.IService
 {
-    public interface ITokenProvider
-    {
-        void SetToken(string token);
-        string? GetToken();
-        void ClearToken();
-    }
+    //public interface ITokenProvider
+    //{
+    //    void SetToken(string token);
+    //    string? GetToken();
+    //    void ClearToken();
+    //}
 }

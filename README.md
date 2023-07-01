@@ -1,2 +1,2 @@
-# EnergyCollab 
-API end points for EnergyCollab, job seeker and client management 
+# API End Points 
+REST API end points for job seekers and client management 

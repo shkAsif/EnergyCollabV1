@@ -115,6 +115,23 @@ namespace EnergyCollab.API.Controllers
             return _response;
         }
 
-
+        [HttpDelete]
+        [Route("{id:int}")]
+        //[Authorize(Roles = "ADMIN")]
+        public ResponseDto Delete(int id)
+        {
+            try
+            {
+                CandidateProfile obj = _db.CandidateProfiles.First(u => u.Id == id);
+                _db.CandidateProfiles.Remove(obj);
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
     }
 }

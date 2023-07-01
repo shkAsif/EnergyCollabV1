@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CandidateProfileDto>
+
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1 class="text-white">Candiate Profile List</h1>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="row pb-3">
+			<div class="col-6">
+			</div>
+			<div class="col-6 text-end">
+				<a asp-action="CandidateProfileCreate" class="btn btn-outline-primary"><i class="bi bi-plus-square"></i> Create New Profile	</a>
+
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						Id
+					</th>
+					<th>
+						Country Code
+					</th>
+					<th>
+						City Name
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>
+							@item.Id
+						</td>
+						<td>
+							@(item.CountryCode)
+						</td>
+						<td>
+							@(item.CityName)
+						</td>
+						<td>
+							<a asp-action="CandidateProfileDelete" asp-route-couponId="@item.Id" class="btn btn-danger">
+								<i class="bi bi-trash"></i>
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+
+</div>

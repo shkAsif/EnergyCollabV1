@@ -9,7 +9,7 @@ using System.Data;
 
 namespace EnergyCollab.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/candidateprofile")]
     [ApiController]
     public class CandidateProfileController : ControllerBase
     {

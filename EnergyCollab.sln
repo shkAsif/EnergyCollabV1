@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{2F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6D831AEF-0D89-494B-BE8C-B75EC7034E6E}"
 	ProjectSection(SolutionItems) = preProject
-		EnergyCollabAPIReadMe.md = EnergyCollabAPIReadMe.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyCollab.Services.API", "EnergyCollab.Services.API\EnergyCollab.Services.API.csproj", "{5486BF62-6454-4A7C-9FD9-973EA53367AB}"

@@ -1,2 +1,2 @@
-# API End Points 
-REST API end points for job seekers and client management 
+# Energy Collab Job Portal 
+Web project for managing jobs and clients 

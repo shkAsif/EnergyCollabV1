@@ -1,11 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace EnergyCollab.Web.Models
+﻿namespace EnergyCollab.Web.Models
 {
-    public class JobSeekerLoginModel
+    public class JobSeekerLogin
     {
-       
-        public int JobSeekerLoginModelId { get; set; }
+        public int Id { get; set; }
         public required string Email { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

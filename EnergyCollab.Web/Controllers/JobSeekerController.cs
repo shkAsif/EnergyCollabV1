@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EnergyCollab.Web.Models;
+using EnergyCollab.Web.Service;
+using EnergyCollab.Web.Service.IService;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnergyCollab.Web.Controllers
 {
     public class JobSeekerController : Controller
+
     {
+        private readonly IJobSeeker _jobSeeker;
+        public JobSeekerController(IJobSeeker jobSeeker)
+        {
+            _jobSeeker = jobSeeker;
+        }
         // GET: JobSeekerController
         public ActionResult Index()
         {
@@ -27,10 +36,11 @@ namespace EnergyCollab.Web.Controllers
         // POST: JobSeekerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(JobSeekerLogin jobSeekerData)
         {
             try
             {
+                ResponseDto? response = await _jobSeeker.CreateJobSeeker(jobSeekerData);
                 return RedirectToAction(nameof(Index));
             }
             catch

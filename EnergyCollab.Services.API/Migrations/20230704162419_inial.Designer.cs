@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace EnergyCollab.API.Migrations
+namespace EnergyCollab.Services.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230630161616_inital")]
-    partial class inital
+    [Migration("20230704162419_inial")]
+    partial class inial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

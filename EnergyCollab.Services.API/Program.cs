@@ -56,7 +56,7 @@ app.MapControllers();
 
 app.UseResponseCompression();
 
-ApplyMigration();
+//ApplyMigration();
 
 app.Run();
 

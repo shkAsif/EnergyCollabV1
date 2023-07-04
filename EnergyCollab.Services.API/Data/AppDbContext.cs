@@ -17,6 +17,7 @@ namespace EnergyCollab.API.Data
         }
 
         public DbSet<CandidateProfile> CandidateProfiles { get; set; }
+        public DbSet<SignUp> SignUps { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,6 @@ namespace EnergyCollab.API.Data
 
         }
 
-        public DbSet<EnergyCollab.Web.Models.JobSeekerLoginModel> JobSeekerLoginModel { get; set; } = default!;
+       // public DbSet<EnergyCollab.Web.Models.JobSeekerLogin> JobSeekerLogin { get; set; } = default!;
     }
 }

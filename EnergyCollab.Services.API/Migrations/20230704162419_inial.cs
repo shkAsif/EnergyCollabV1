@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace EnergyCollab.API.Migrations
+namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
-    public partial class inital : Migration
+    public partial class inial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

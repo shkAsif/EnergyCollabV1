@@ -43,7 +43,7 @@ namespace EnergyCollab.API.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public ResponseDto Get(int id)
+        public ResponseDto Get(int id)         
         {
             try
             {

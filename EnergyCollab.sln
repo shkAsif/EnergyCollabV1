@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6D
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyCollab.Services.API", "EnergyCollab.Services.API\EnergyCollab.Services.API.csproj", "{5486BF62-6454-4A7C-9FD9-973EA53367AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyCollab.Services.API", "EnergyCollab.Services.API\EnergyCollab.Services.API.csproj", "{5486BF62-6454-4A7C-9FD9-973EA53367AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyCollab.Web", "EnergyCollab.Web\EnergyCollab.Web.csproj", "{D82939B7-8507-4CCD-9FF9-5DA175C5E689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyCollab.Web", "EnergyCollab.Web\EnergyCollab.Web.csproj", "{D82939B7-8507-4CCD-9FF9-5DA175C5E689}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

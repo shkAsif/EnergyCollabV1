@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnergyCollab.Web.Models;
 
 namespace EnergyCollab.API.Data
 {
@@ -22,5 +23,7 @@ namespace EnergyCollab.API.Data
             base.OnModelCreating(modelBuilder);
 
         }
+
+        public DbSet<EnergyCollab.Web.Models.JobSeekerLoginModel> JobSeekerLoginModel { get; set; } = default!;
     }
 }

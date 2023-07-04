@@ -15,7 +15,7 @@ namespace EnergyCollab.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/SignUp.cshtml");
         }
 
         public IActionResult Privacy()

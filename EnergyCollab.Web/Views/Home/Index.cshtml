@@ -1,8 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<style>
+    body{
+        background-color:black;
+        color:white;
+    }
+</style>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="https://cdn.oildiversity.com/app/images/logo/logo-type-horizontal-white.svg" />
 </div>
+<div>
+    <h3>
+        The New Era of Business Collaboration, Innovation and Workforce Efficiency
+    </h3>
+</div>
+<div class="text-center">
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="JobSeekerLogin" value="JOB SEEKER LOGIN" asp-page-handler="JOB SEEKER LOGIN" onclick="location.href='@Url.Action("Index", "Home", new { id = "JobSeekerLogin" })'" />
+        </div>
+        <div class="col-lg-6 ">
+            <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="JobSeekerSignUp" value="JOB SEEKER SIGN UP" asp-page-handler="Cancel" onclick="location.href='@Url.Action("Index", "Home", new { id = "JobSeekerSignUp" })'" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 ">
+            <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="ClientLogin" value="CLIENT  LOGIN" asp-page-handler="Cancel" onclick="location.href='@Url.Action("Index", "Home", new { id = "ClientLogin" })'" />
+        </div>
+        <div class="col-lg-6">
+            <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="ClientSignUp" value="CLIENT SIGN UP" asp-page-handler="Cancel" onclick="location.href='@Url.Action("Index", "Home", new { id = "ClientSignUp" })'" />
+        </div>
+    </div>
+</div>-

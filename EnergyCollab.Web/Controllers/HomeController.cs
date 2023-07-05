@@ -12,11 +12,30 @@ namespace EnergyCollab.Web.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(string id)
         {
-           return RedirectToAction("CreateSignUp", "Signup");
-            //return View("~/Views/SignUp/CreateSignUp.cshtml");
+
+            if (id == "JobSeekerLogin")
+            {
+                return View();
+            }
+            else if (id == "JobSeekerSignUp") {
+                return RedirectToAction("CreateSignUp", "Signup");
+            }
+            else if (id == "ClientLogin")
+            {
+                return View();
+            }
+            else if (id == "ClientSignUp")
+            {
+                return View("~/Views/Home/ClientSignUp.cshtml");
+            }
+            else
+            {
+                return View();
+            }
+            //return RedirectToAction("CreateSignUp", "Signup");
         }
 
         public IActionResult Privacy()

@@ -1,3 +1,4 @@
+using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
@@ -12,12 +13,15 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
 builder.Services.AddHttpClient<ICandidateProfileService, CandidateService>();
+builder.Services.AddHttpClient<ISignUp, SignUpService>();
+
 
 SD.CandidateAPIBase = builder.Configuration["ServiceUrls:CandidateAPI"];
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICandidateProfileService, CandidateService>();
+builder.Services.AddScoped<ISignUp, SignUpService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

@@ -4,24 +4,24 @@ using EnergyCollab.Web.Utility;
 
 namespace EnergyCollab.Web.Service
 {
-    public class JobSeeker : IJobSeeker
+    public class SignUpService : ISignUp
     {
         private readonly IBaseService _baseService;
-        public JobSeeker(IBaseService baseService)
+        public SignUpService(IBaseService baseService)
         {
             _baseService = baseService;
         }
 
-        public async Task<ResponseDto?> CreateJobSeeker(JobSeekerLogin jobseeker)
+        
+
+        public async Task<ResponseDto?> CreateUserSignUp(SignUpDto signUpDto)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
-                Data = jobseeker ,
-                Url = SD.CandidateAPIBase + "/api/CandidateProfile"
+                Data = signUpDto,
+                Url = SD.CandidateAPIBase + "/api/SignUp"
             });
         }
-
-      
     }
 }

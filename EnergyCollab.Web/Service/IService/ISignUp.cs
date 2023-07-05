@@ -2,10 +2,10 @@
 
 namespace EnergyCollab.Web.Service.IService
 {
-    public interface IJobSeeker
+    public interface ISignUp
     {
         
-        Task<ResponseDto?> CreateJobSeeker(JobSeekerLogin jobseeker);
+        Task<ResponseDto?> CreateUserSignUp(SignUpDto signUp);
        
     }
 }

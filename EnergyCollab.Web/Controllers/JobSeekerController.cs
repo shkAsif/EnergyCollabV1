@@ -9,8 +9,8 @@ namespace EnergyCollab.Web.Controllers
     public class JobSeekerController : Controller
 
     {
-        private readonly IJobSeeker _jobSeeker;
-        public JobSeekerController(IJobSeeker jobSeeker)
+        private readonly ISignUp _jobSeeker;
+        public JobSeekerController(ISignUp jobSeeker)
         {
             _jobSeeker = jobSeeker;
         }
@@ -33,21 +33,21 @@ namespace EnergyCollab.Web.Controllers
             return View();
         }
 
-        // POST: JobSeekerController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(JobSeekerLogin jobSeekerData)
-        {
-            try
-            {
-                ResponseDto? response = await _jobSeeker.CreateJobSeeker(jobSeekerData);
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       // POST: JobSeekerController/Create
+       //[HttpPost]
+       //[ValidateAntiForgeryToken]
+       // public async Task<IActionResult> Create(JobSeekerLogin jobSeekerData)
+       // {
+       //     try
+       //     {
+       //         ResponseDto? response = await _jobSeeker.CreateJobSeeker(jobSeekerData);
+       //         return RedirectToAction(nameof(Index));
+       //     }
+       //     catch
+       //     {
+       //         return View();
+       //     }
+       // }
 
         // GET: JobSeekerController/Edit/5
         public ActionResult Edit(int id)

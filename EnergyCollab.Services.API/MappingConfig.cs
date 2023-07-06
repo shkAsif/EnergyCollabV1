@@ -3,6 +3,7 @@ using EnergyCollab.API.Dto;
 using EnergyCollab.Models;
 using EnergyCollab.Services.API.Dto;
 using EnergyCollab.Services.API.Migrations;
+using EnergyCollab.Services.API.Models;
 using EnergyCollab.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace EnergyCollab.API
                 config.CreateMap<CandidateProfile, CandidateProfileDto>();
 
                 config.CreateMap<SignUpDto, SignUp>().ReverseMap();
+                config.CreateMap<LoginDto, Login>().ReverseMap();
+
 
 
             });

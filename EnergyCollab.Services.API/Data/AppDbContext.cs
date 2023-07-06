@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EnergyCollab.Web.Models;
+using EnergyCollab.Services.API.Models;
 
 namespace EnergyCollab.API.Data
 {
@@ -18,6 +19,8 @@ namespace EnergyCollab.API.Data
 
         public DbSet<CandidateProfile> CandidateProfiles { get; set; }
         public DbSet<SignUp> SignUps { get; set; }
+        public DbSet<Login> Logins { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

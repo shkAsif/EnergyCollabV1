@@ -18,10 +18,15 @@ namespace EnergyCollab.Web.Controllers
 
             if (id == "JobSeekerLogin")
             {
-                return View();
+                return RedirectToAction("Login", "Signup");
             }
-            else if (id == "JobSeekerSignUp") {
+            else if (id == "JobSeekerSignUp")
+            {
                 return RedirectToAction("CreateSignUp", "Signup");
+            }
+            else if (id == "guest")
+            {
+                return RedirectToAction("Index", "JobSeeker");
             }
             else if (id == "ClientLogin")
             {
@@ -29,6 +34,7 @@ namespace EnergyCollab.Web.Controllers
             }
             else if (id == "ClientSignUp")
             {
+                //return RedirectToAction("ClientSignUpPage", "Client");
                 return View("~/Views/Home/ClientSignUp.cshtml");
             }
             else

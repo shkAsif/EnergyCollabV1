@@ -3,6 +3,7 @@ using EnergyCollab.API.Data;
 using EnergyCollab.API.Dto;
 using EnergyCollab.Models;
 using EnergyCollab.Services.API.Dto;
+using EnergyCollab.Services.API.Models;
 using EnergyCollab.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -54,6 +55,27 @@ namespace EnergyCollab.Services.API.Controllers
                 _db.SaveChanges();
 
                 _response.Result = _mapper.Map<SignUpDto>(obj);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
+        [HttpPost]
+        [Route("login")]
+        //[Authorize(Roles = "ADMIN")]
+        public ResponseDto Login([FromBody] LoginDto loginDto)
+        {
+            try
+            {
+                Login loginObj = _mapper.Map<Login>(loginDto);
+                _db.Logins.Add(loginObj);
+                _db.SaveChanges();
+
+                _response.Result = _mapper.Map<LoginDto>(loginObj);
             }
             catch (Exception ex)
             {

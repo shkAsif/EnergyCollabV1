@@ -12,7 +12,7 @@ namespace EnergyCollab.Web.Service
             _baseService = baseService;
         }
 
-        
+
 
         public async Task<ResponseDto?> CreateUserSignUp(SignUpDto signUpDto)
         {
@@ -21,6 +21,16 @@ namespace EnergyCollab.Web.Service
                 ApiType = SD.ApiType.POST,
                 Data = signUpDto,
                 Url = SD.CandidateAPIBase + "/api/SignUp"
+            });
+        }
+
+        public async Task<ResponseDto?> UserLogin(LoginDto userLogin)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = userLogin,
+                Url = SD.CandidateAPIBase + "/api/SignUp/login"
             });
         }
     }

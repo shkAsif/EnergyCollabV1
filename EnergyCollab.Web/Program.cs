@@ -1,9 +1,7 @@
-using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

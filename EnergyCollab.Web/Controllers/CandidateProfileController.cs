@@ -10,7 +10,7 @@ namespace EnergyCollab.Web.Controllers
         private readonly ICandidateProfileService _candidateProfileService;
         public CandidateProfileController(ICandidateProfileService candidateProfileService)
         {
-                _candidateProfileService = candidateProfileService;
+            _candidateProfileService = candidateProfileService;
         }
 
         public async Task<IActionResult> CandidateProfileIndex()

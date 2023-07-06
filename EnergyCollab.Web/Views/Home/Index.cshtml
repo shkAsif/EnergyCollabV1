@@ -3,8 +3,16 @@
 }
 <style>
     body{
-        background-color:black;
-        color:white;
+        background-color: #dadada;
+        color:rgba(0, 0, 0, 1);
+    }
+
+    .job-search-button-right {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        z-index: 888;
+        max-width: 150px;
     }
 </style>
 <div class="text-center">
@@ -32,4 +40,8 @@
             <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="ClientSignUp" value="CLIENT SIGN UP" asp-page-handler="Cancel" onclick="location.href='@Url.Action("Index", "Home", new { id = "ClientSignUp" })'" />
         </div>
     </div>
-</div>-
+</div>
+
+<div class="job-search-button-right">
+    <button class="btn btn-success quick-job-search-btn" onclick="location.href='@Url.Action("Index", "Home", new { id = "guest" })'"><i class="fa fa-search"></i><span class="hidden-xs">&nbsp;Search Jobs</span></button>
+</div>

@@ -228,13 +228,13 @@
                     <tr id="button-wrapper">
                         <th></th>
                         <td>
-                            <button onclick="location.href='@Url.Action("ClientSignUpPage", "Client", new { id = "Platinum" })'">Sign Up</button>
+                            <button onclick="location.href='@Url.Action("ClientSignUpPage", "Client", new { plan = "Platinum" })'">Sign Up</button>
                         </td>
                         <td>
-                            <a href="*|base-app-url|*#/signup?l=en&pc=goldPlan">Sign Up</a>
+                            <button onclick="location.href='@Url.Action("ClientSignUpPage", "Client", new { plan = "GOLD" })'">Sign Up</button>
                         </td>
                         <td>
-                            <a href="*|base-app-url|*#/signup?l=en&pc=silverPlan">Sign Up</a>
+                            <button onclick="location.href='@Url.Action("ClientSignUpPage", "Client", new { plan = "Silver" })'">Sign Up</button>
                         </td>
                         <!--<td>
                             <a href="*|base-app-url|*#/signup?l=en&pc=bronzePlan">Sign Up</a>

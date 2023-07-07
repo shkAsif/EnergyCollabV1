@@ -26,7 +26,7 @@ namespace EnergyCollab.Web.Controllers
             }
             else if (id == "guest")
             {
-                return RedirectToAction("Index", "JobSeeker");
+                return RedirectToAction("QuickJobSearch", "JobSeeker");
             }
             else if (id == "ClientLogin")
             {

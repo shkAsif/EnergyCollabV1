@@ -33,5 +33,17 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/SignUp/login"
             });
         }
+
+        public async Task<ResponseDto?> CreateClientAccount(ClientSignUpDto clientDto , string plan)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = clientDto,
+                Url = SD.CandidateAPIBase + "/api/client/ClentSignUp"
+            });
+        }
+
+       
     }
 }

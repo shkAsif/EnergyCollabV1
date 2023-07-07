@@ -6,12 +6,15 @@
 
 
 <div id="partial-wrapper" class="container animated fadeIn">
-    <h1>QUICK JOBS SEARCH</h1>
-    <form id="quick-jobs-search-form" class="row" novalidate="novalidate">
-        <div class="row">
-            <div class="form-group col-md-4 col-sm-12 col-xs-12 remove-padding">
+    <h1>QUICK JOBSsd SEARCH</h1>
+    <form id="quick-jobs-search-form" class="row">
+        <div class="row col-md-12 justify-content-between">
+            <div class="form-group col-md-4 col-sm-12 col-xs-12">
                 <label for="inputCountry">@Html.DisplayNameFor(model => model.Country):</label>
-                <select id="inputCountry" name="inputCountry" class="">
+
+                @Html.DropDownList("SelectedCountryId", ViewData["Countries"] as List<SelectListItem>, "Select a country", new { @class = "form-control" })
+
+@*                <select id="inputCountry" name="inputCountry" class="p-2">
                     <option value="">All</option>
                     <option value="af">Afghanistan</option>
                     <option value="al">Albania</option>
@@ -254,23 +257,23 @@
                     <option value="zm">Zambia</option>
                     <option value="zw">Zimbabwe</option>
                 </select>
-            </div>
-            <div class="form-group col-md-2 col-sm-12 col-xs-12 pull-right remove-padding">
+*@            </div>
+            <div class="form-group col-md-2 col-sm-12 col-xs-12 pull-right">
                 <label for="inputOrderBy"> @Html.DisplayNameFor(model => model.OrderBy):</label>
-                <select id="inputOrderBy" name="inputOrderBy" class="">
+                <select id="inputOrderBy" name="inputOrderBy" class="p-2">
                     <option value="cityName">City Name</option>
-                    <option value="jobTitle">Job Title</option>
+                    <option selected value="jobTitle">Job Title</option>
                     <option value="postedDate">Job Posted Date</option>
                 </select>
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-12 remove-padding">
+            <div class="form-group col-md-12">
                 <label class="control-label">Enter  @Html.DisplayNameFor(model => model.SearchPhrase) and click "Search"</label>
                 <div class="input-group merged">
-                    <input id="inputSearchPhrase" name="inputSearchPhrase" class="form-control p-1" placeholder="Type a part of what are you looking for..." type="text">
+                    <input id="inputSearchPhrase" name="inputSearchPhrase" class="form-control p-2" placeholder="Type a part of what are you looking for..." type="text">
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">
+                        <button class="btn btn-success p-2" type="submit">
                             <span>Search</span>&nbsp;<i class="fa fa-search"></i>
                         </button>
                     </span>

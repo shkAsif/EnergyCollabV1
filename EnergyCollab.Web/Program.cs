@@ -20,6 +20,7 @@ SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICandidateProfileService, CandidateService>();
 builder.Services.AddScoped<ISignUp, SignUpService>();
+builder.Services.AddScoped<IJobSearch, JobSearchService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

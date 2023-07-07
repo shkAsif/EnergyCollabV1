@@ -12,8 +12,9 @@ namespace EnergyCollab.Web.Models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         [Required]
-        public string Password { get; set; }
-        
+        public string Password { get; set; }        
         public string ?ConfirmPassword { get; set; }
+        public string CompanyName { get; set; }
+        public string LoginUser { get; set; }
     }
 }

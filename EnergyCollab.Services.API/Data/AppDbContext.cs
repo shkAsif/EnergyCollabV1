@@ -20,7 +20,8 @@ namespace EnergyCollab.API.Data
         public DbSet<CandidateProfile> CandidateProfiles { get; set; }
         public DbSet<SignUp> SignUps { get; set; }
         public DbSet<Login> Logins { get; set; }
-
+        public DbSet<Vacancy> Vacancies { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

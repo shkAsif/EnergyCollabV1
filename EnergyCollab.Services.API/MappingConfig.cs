@@ -24,7 +24,7 @@ namespace EnergyCollab.API
 
                 config.CreateMap<SignUpDto, SignUp>().ReverseMap();
                 config.CreateMap<LoginDto, Login>().ReverseMap();
-
+                config.CreateMap<CountryDto, Country>().ReverseMap();
 
 
             });

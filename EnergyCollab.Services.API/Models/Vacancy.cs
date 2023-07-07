@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System.Drawing;
 
 namespace EnergyCollab.Services.API.Models
@@ -22,13 +24,29 @@ namespace EnergyCollab.Services.API.Models
         public Category EmpCategory { get; set; }
         public string SubCategory { get; set; } = string.Empty;
 
+        public Country country { get; set; }
+        public int? countryId { get; set; }
     }
 
+    public partial class VacancyConfiguration : IEntityTypeConfiguration<Vacancy>
+    {
+
+        public void Configure(EntityTypeBuilder<Vacancy> modelBuilder)
+        {
+            modelBuilder.HasIndex(e => e.Id);
+
+            //Country
+            modelBuilder.HasOne(pt => pt.country)
+                .WithMany(t => t.vacancies)
+                .HasForeignKey(p => p.countryId);
+        }
+            
+    }
+    //Todo Move to Constanc.cs file
     public enum Category
     {
         Contract,
         FullTime,
         PartTime
     }
-
 }

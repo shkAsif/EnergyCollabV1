@@ -16,8 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 });
 
 //Add AutoMapper dependency
-IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
-builder.Services.AddSingleton(mapper);
+//IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+//builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 //Add compression to response

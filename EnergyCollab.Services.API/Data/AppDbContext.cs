@@ -23,6 +23,7 @@ namespace EnergyCollab.API.Data
         public DbSet<Vacancy> Vacancies { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<ClientSignup> ClientSignups { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

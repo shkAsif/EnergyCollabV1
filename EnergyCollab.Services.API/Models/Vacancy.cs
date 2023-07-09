@@ -26,6 +26,11 @@ namespace EnergyCollab.Services.API.Models
 
         public Country country { get; set; }
         public int? countryId { get; set; }
+
+        public Organization organization { get; set; }
+        public int? organizationId { get; set; }
+
+
     }
 
     public partial class VacancyConfiguration : IEntityTypeConfiguration<Vacancy>
@@ -39,6 +44,11 @@ namespace EnergyCollab.Services.API.Models
             modelBuilder.HasOne(pt => pt.country)
                 .WithMany(t => t.vacancies)
                 .HasForeignKey(p => p.countryId);
+
+            //Organization
+            modelBuilder.HasOne(pt => pt.organization)
+                .WithMany(t => t.Vacancies)
+                .HasForeignKey(p => p.organizationId);
         }
             
     }

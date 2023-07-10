@@ -13,6 +13,8 @@ namespace EnergyCollab.Services.API.Dto
         public string Country { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Abb { get; set; } = string.Empty;
+        public string Experience { get; set; }
+
 
     }
 }

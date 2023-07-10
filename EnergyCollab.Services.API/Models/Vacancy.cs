@@ -17,21 +17,25 @@ namespace EnergyCollab.Services.API.Models
         public bool ActivationStatus { get; set; }
         public bool IsActive { get; set; }
         public int VacancyAdvertLength { get; set; }
-        public int IndustryExperience { get; set; }
+        //public int IndustryExperience { get; set; }
         public int Salary { get; set; }
         public string Education { get; set; } = string.Empty;
         public string ExperienceSummary { get; set; }
         public Category EmpCategory { get; set; }
         public string SubCategory { get; set; } = string.Empty;
 
+        //Country
         public Country country { get; set; }
         public int? countryId { get; set; }
-
+        //Organisation
         public Organization organization { get; set; }
         public int? organizationId { get; set; }
+        //Experience
         public Experience experience { get; set; }
         public int? experienceId { get; set; }
 
+        //Salary
+        //ExperienceCategory
 
     }
 

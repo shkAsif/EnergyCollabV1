@@ -58,9 +58,44 @@ namespace EnergyCollab.Services.API.Controllers
                     .Include(x => x.organization)
                     .Include(x => x.country)
                     .Where(x => x.country.Name.ToLower().Equals(country.ToLower())
-                            || x.JobTitle.ToLower().Equals(jobTitle.ToLower())  )                   
+                            || x.JobTitle.ToLower().Equals(jobTitle.ToLower()))
                     .ToListAsync();
-                 
+
+                _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
+                return Ok(_response);
+
+
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+                return BadRequest();
+
+            }
+
+        }
+
+
+
+        [Route("detailsearch")]
+        [HttpPost]
+        public async Task<IActionResult> DetailSearchVacany(DetailSearchViewModel detailSearchViewModel)
+        {
+            try
+            {
+                IEnumerable<Vacancy> vacancies = await _db.Vacancies
+                    .AsNoTracking()
+                    .Include(x => x.organization)
+                    .Include(x => x.country)
+                    .Include(x => x.experience)
+                    .Where(x =>
+                               x.country.Abbrivation.Equals(detailSearchViewModel.Abbrivation)
+                            || x.experience.Range.Equals(detailSearchViewModel.experience))
+                    ///EmpCat,Salary, Educ, ExpCat
+                    .OrderBy(x => x.country.Name)
+                    .ToListAsync();
+
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
                 return Ok(_response);
 

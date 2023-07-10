@@ -60,7 +60,10 @@ namespace EnergyCollab.API
            .ForMember(x => x.EmpCategory, opt => opt.MapFrom(i => Helper.GetCategoryName((int)i.EmpCategory)))
            .ForMember(i => i.City, opt => opt.MapFrom(i => i.country.City))
            .ForMember(i => i.Education, opt => opt.MapFrom(i => i.Education))
-           .ForMember(i => i.Abb, opt => opt.MapFrom(i => i.country.Abbrivation));
+           .ForMember(i => i.Abb, opt => opt.MapFrom(i => i.country.Abbrivation))
+           .ForMember(i => i.Experience, opt => opt.MapFrom(i => i.experience.Range))
+           
+           ;
 
         }
     }

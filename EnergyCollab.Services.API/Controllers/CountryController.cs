@@ -22,9 +22,9 @@ namespace EnergyCollab.Services.API.Controllers
             _response = new ResponseDto();
         }
 
-
         [HttpGet]
-        public ResponseDto Get()
+        [Route("GetCountries")]
+        public ResponseDto GetCountries()
         {
             try
             {
@@ -38,6 +38,5 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
     }
 }

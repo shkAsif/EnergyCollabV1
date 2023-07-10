@@ -20,19 +20,20 @@ namespace EnergyCollab.Web.Controllers
         public async Task<IActionResult> QuickJobSearch()
         {
             ResponseDto? response = await _jobSearchService.Country();
-
+            ResponseDto? JobResult = await _jobSearchService.SearchJob();
             if (response != null && response.IsSuccess)
             {
 
-                var result = response.Result;
                 List<CountryDto> countries = JsonConvert.DeserializeObject<List<CountryDto>>(Convert.ToString(response.Result));
+                List<VacancyDto> vacancies = JsonConvert.DeserializeObject<List<VacancyDto>>(Convert.ToString(JobResult.Result));
+
                 var countrySelectList = countries.Select(c => new SelectListItem
                 {
                     Value = c.City.ToString(),
                     Text = c.Name
                 }).ToList();
                 ViewData["Countries"] = countrySelectList;
-                return View();
+                ViewData["vacancies"] = vacancies;
             }
             else
             {

@@ -1,0 +1,1941 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .contentadd {
+            display: none;
+
+        }
+
+        section.main {
+            margin-top: 80px !important;
+        }
+
+        .navbar {
+
+            margin-top: 0px;
+        }
+
+        .head-btm {
+            display: none;
+        }
+
+        .tile {
+            border: 1px solid #E3E3E3;
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+
+            color: #000;
+        }
+
+        .img-thumbnail {
+            padding: 2px;
+            line-height: 1.42857143;
+            background-color: #ffffff;
+            /* border: 1px solid #ecf0f1; */
+            /* border-radius: 4px; */
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            display: inline-block;
+            max-width: 100%;
+            height: 32px;
+        }
+
+        table.table-responsive {
+            width: 100%;
+            display: block;
+            overflow-y: scroll;
+            height: 477px;
+        }
+
+
+        table-bordered>thead>tr>th,
+        .table-bordered>thead>tr>th,
+        table-bordered>tbody>tr>th,
+        .table-bordered>tbody>tr>th,
+        table-bordered>tfoot>tr>th,
+        .table-bordered>tfoot>tr>th,
+        table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>td,
+        table-bordered>tbody>tr>td,
+        .table-bordered>tbody>tr>td,
+        table-bordered>tfoot>tr>td,
+        .table-bordered>tfoot>tr>td {
+            border: 1px solid #ecf0f1;
+            width: 10%;
+        }
+
+
+        .table>caption+thead>tr:first-child>th,
+        .table>colgroup+thead>tr:first-child>th,
+        .table>thead:first-child>tr:first-child>th,
+        .table>caption+thead>tr:first-child>td,
+        .table>colgroup+thead>tr:first-child>td,
+        .table>thead:first-child>tr:first-child>td {
+            border-top: 0;
+            background-color: black;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+            }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+        @media only screen and (max-width: 768px) {
+            .col-md-1.mobileLogo img {
+                width: 191px;
+                position: relative;
+                left: 35%;
+                height: 95px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 18%;
+                height: 100px;
+                object-fit: contain;
+            }
+
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }
+
+        /*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+    </style>
+</head>
+
+<body>
+    <section id="content" class="main container"
+        data-bind="router: { transition: 'entrance', cacheViews: false }, css: { 'loading-background' : state.isLoading}">
+        <div class="durandal-wrapper" data-view="views/admin"   data-active-view="true">
+            <section class="page-section">
+
+                <div class="row">
+                    <div class="col-md-3 col-xs-12 right-left-padding-remover">
+
+                        <ul class="list-group">
+                            <!-- ko foreach: views -->
+                            <a class="list-group-item list-group-item-active"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge bg-success">16</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-building"></i>
+                                    <span data-bind="text: name">Companies</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">54</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-group"></i>
+                                    <span data-bind="text: name">User Groups</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">53</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-user-secret"></i>
+                                    <span data-bind="text: name">Security Rights</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">16</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-pencil-square"></i>
+                                    <span data-bind="text: name">Templates</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">559</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-th-list"></i>
+                                    <span data-bind="text: name">Update Candidate Subscribers</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">15</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-list"></i>
+                                    <span data-bind="text: name">Update Client Subscribers</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">17</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-file-text"></i>
+                                    <span data-bind="text: name">Contents</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">0</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-list-alt"></i>
+                                    <span data-bind="text: name">Quarterly Magazine</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">0</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-image"></i>
+                                    <span data-bind="text: name">Live Banners</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">1</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-archive"></i>
+                                    <span data-bind="text: name">Archived Banners</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">3</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-file"></i>
+                                    <span data-bind="text: name">User Manual and Guides</span>
+                                </p>
+                            </a>
+
+                            <a class="list-group-item"
+                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
+                                href="#">
+
+                                <span class="badge" data-bind="text: items().length">2</span>
+
+                                <p class="list-group-item-heading">
+                                    <i data-bind="css: icon" class="fa fa-file"></i>
+                                    <span data-bind="text: name">Add/Edit Documents</span>
+                                </p>
+                            </a>
+                            <!-- /ko -->
+                        </ul>
+                    </div>
+
+                    <div id="content-view" class="col-md-9 col-xs-12" data-bind="compose: selectedView().id">
+                        <div class="durandal-wrapper" data-view="views/adminCompanies" data-active-view="true"  >
+                            <div class="row title-row">
+                                <div class="pull-right">
+                                    <!-- For now the only way of adding a new company is via sginup form-->
+                                    <!--<button class="btn btn-success btn-sm"-->
+                                    <!--data-bind="click: newItem,  visible: !isEditing()"><i class="fa fa-plus"></i></button>-->
+                                </div>
+                                <div class="pull-left">
+                                    <h3 data-bind="text: $root.loc.stringCompanies">Companies</h3>
+                                </div>
+                            </div>
+                            <div class="composer-plate">
+
+                                <!-- ko foreach: companies -->
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true" >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">GOOGLE</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">BEV
+                                                            RIACH</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">bevriach@googlemail.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=ce2aa68d-4661-e611-9402-000d3a2089d1">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">Pointofivetoo</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">Rob
+                                                            Ledger</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">stledger@gmail.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=720e0398-4661-e611-9402-000d3a2089d1">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">Paladon
+                                                    Systems Ltd</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Matthew
+                                                            Shepherd</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">matthew.shepherd@paladonsystems.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">OPTIMAL
+                                                    TRANSNATIONAL INDIA PRIVATE LIMITED</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">Test
+                                                            t</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">arvind@optimalvirtualemployee.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">OVE</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">xxx
+                                                            xxx</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">xxx@ove.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=9288946f-b0ee-e611-93ff-000d3a208119">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">Future
+                                                    Engineering</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Peter
+                                                            Wlaton</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">peterwa1958@outlook.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=a2ac1b4a-3e4b-e711-9400-000d3a208840">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">KL
+                                                    Relocation</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Colin
+                                                            Rossbridge</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">colin@klrelocation.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=2f1d4f0c-beee-e611-93ff-000d3a208119">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">International Petroleum Consultants</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Kevin
+                                                            Rolens</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">krolens@gmail.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=f16d0957-a3b7-ea11-a2da-fc57d5303668">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">The
+                                                    Energy Collab</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Beverley
+                                                            Riach</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">admin@theenergycollab.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=4dc31ad9-a54b-e711-9400-000d3a208840">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">Ultra
+                                                    Deep Solutions</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">Joey
+                                                            Teo</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">joey.teo@ultradeepsolutions.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=ca2c0cdf-b1ee-e611-93ff-000d3a208119">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">CETCO
+                                                    Energy Services</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Andrew
+                                                            Logue</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">andrew.logue@mineralstech.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=a697f479-afee-e611-93ff-000d3a208119">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">Pink
+                                                    Petro</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Katie
+                                                            Mehnert</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">katie@pinkpetro.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">OVE_Test</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">OVE
+                                                            OVE</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">anilmishra2005@optimalvirtualemployee.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">Apple</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Steve
+                                                            Jobs</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">admin@apple.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://api.theenergycollab.com/api/storage/redirect?id=28ad3972-b1ee-e611-93ff-000d3a208119">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch" data-bind="text: name">Pressure
+                                                    Dynamics</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.person.names.fullName">Peter
+                                                            Wlaton</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">peter.walton@pressuredynamics.com</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--Admin Standard Company Tile-->
+                                <div class="" data-bind="compose: 'adminCompanyTile.html'">
+                                    <div class="durandal-wrapper" data-view="views/adminCompanyTile"
+                                        data-active-view="true"  >
+                                        <div class="tile row"
+                                            data-bind="visible: !$root.isEditing(), click: $root.setSelectedItem, css: { selected: id() === $root.selectedItemId()}">
+
+                                            <!-- Standard update, edit and delete options -->
+                                            <div class="" data-bind="compose: 'adminTileButtonPanel.html'">
+                                                <div class="tile-button-panel"
+                                                    data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()"
+                                                    data-view="views/adminTileButtonPanel" data-active-view="true"
+                                                     ></div>
+                                            </div>
+
+                                            <!-- ko with: company -->
+
+                                            <div class="col-md-1 mobileLogo">
+                                                <img class="img img-responsive img-thumbnail"
+                                                    data-bind="attr:{ src: $root.utilities.resolveFileUrl(logoImageId()) }"
+                                                    src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
+                                            </div>
+
+                                            <div class="col-md-11">
+                                                <span class="title companyNameForSearch"
+                                                    data-bind="text: name">OVE_Test</span>
+
+                                                <div class="tile-confirmation make-danger"
+                                                    data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
+                                                    style="display: none;">
+                                                    <i class="fa fa-trash-o fa-2x"></i>
+                                                    <span data-bind="text: $root.loc.textDeleteConfirmationMessage">Are
+                                                        you sure you want to delete this item?</span>
+                                                </div>
+
+                                                <div class="tile-body row"
+                                                    data-bind="visible: id() !== $root.selectedItemId() || !$root.isDeleting()">
+
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-user"></i></span>
+                                                        <span data-bind="text: $parent.owner.person.names.fullName">OVE
+                                                            OVE</span>
+                                                    </div>
+                                                    <div class="col-md-12" style="padding:0px;">
+                                                        <span class="tile-label"><i class="fa fa-envelope"></i></span>
+                                                        <span
+                                                            data-bind="text: $parent.owner.emailAddress">anil.mishra@optimalvirtualemployee.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- /ko -->
+                            </div>
+                            <div data-bind="compose: 'adminEditCompany.html', visible: isEditing()"
+                                style="display: none;">
+                                <div class="composer-plate" data-bind="visible: isEditing"
+                                    data-view="views/adminEditCompany" data-active-view="true" style="display: none;">
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title" data-bind="text: $root.loc.stringEditCompany">Edit
+                                                Company</h3>
+                                        </div>
+
+                                        <div class="panel-body">
+
+                                            <ul class="nav nav-pills">
+                                                <li class="active">
+                                                    <a href="#editCompanyProfile" data-toggle="tab">
+                                                        <span class="fa fa-edit" aria-hidden="true"></span>
+                                                        <span class="tab-header-label"
+                                                            data-bind="text: $root.loc.stringCompanyProfile">Company
+                                                            Profile</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#invitation" data-toggle="tab">
+                                                        <span class="fa fa-share-alt" aria-hidden="true"></span>
+                                                        <span class="tab-header-label"
+                                                            data-bind="text: $root.loc.stringInvitation">Invitation</span>
+                                                    </a>
+                                                </li>
+                                                <li data-bind="visible: state.isAdministrator()">
+                                                    <a href="#accessRequests" data-toggle="tab">
+                                                        <span class="fa fa-users" aria-hidden="true"></span>
+                                                        <span class="tab-header-label"
+                                                            data-bind="text: $root.loc.stringUsers">Users</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#communityNetwork" data-toggle="tab">
+                                                        <span class="fa fa-comments-o" aria-hidden="true"></span>
+                                                        <span class="tab-header-label"
+                                                            data-bind="text: $root.loc.stringCommunityNetwork">Community
+                                                            Network</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="editCompanyProfile" class="tab-pane fade in active">
+                                                    <form class="form form-admin" data-bind="with: selectedItem"></form>
+
+                                                </div>
+
+                                                <!-- ko with : selectedItem--><!-- /ko -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="tile row">
+                                        <div class="admin-button-panel text-right">
+                                            <button class="btn btn-success"
+                                                data-bind="command: saveCommand, text: $root.loc.buttonSave">Save</button>
+                                            <button class="btn btn-default"
+                                                data-bind="click: cancelEdit, text: $root.loc.buttonCancel">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+    </section>
+</body>
+
+</html>

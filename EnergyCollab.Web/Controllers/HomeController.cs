@@ -30,7 +30,8 @@ namespace EnergyCollab.Web.Controllers
             }
             else if (id == "ClientLogin")
             {
-                return View();
+                //return RedirectToAction("ClientDashboard", "JobSeeker");
+                return View("~/Views/Client/ClientDashboard.cshtml");
             }
             else if (id == "ClientSignUp")
             {

@@ -20,3 +20,764 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* ******** MY Edit ******** */
+.contentadd {
+    display: none;
+}
+
+section.main {
+    margin-top: 80px !important;
+}
+
+.navbar {
+    margin-top: 0px;
+}
+
+.head-btm {
+    display: none;
+}
+
+.tile {
+    border: 1px solid #E3E3E3;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #000;
+}
+
+.img-thumbnail {
+    padding: 2px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    /* border: 1px solid #ecf0f1; */
+    /* border-radius: 4px; */
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: 32px;
+}
+
+table.table-responsive {
+    width: 100%;
+    display: block;
+    overflow-y: scroll;
+    height: 477px;
+}
+
+
+table-bordered > thead > tr > th,
+.table-bordered > thead > tr > th,
+table-bordered > tbody > tr > th,
+.table-bordered > tbody > tr > th,
+table-bordered > tfoot > tr > th,
+.table-bordered > tfoot > tr > th,
+table-bordered > thead > tr > td,
+.table-bordered > thead > tr > td,
+table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > td,
+table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > td {
+    border: 1px solid #ecf0f1;
+    width: 10%;
+}
+
+
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+    background-color: black;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+            }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 768px) {
+    .col-md-1.mobileLogo img {
+        width: 191px;
+        position: relative;
+        left: 35%;
+        height: 95px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .col-md-1.mobileLogo img {
+        width: 150px;
+        position: relative;
+        left: 18%;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .col-md-1.mobileLogo {
+        display: initial;
+    }
+}
+
+/*@media only screen and (max-width: 420px) {
+            .col-md-1.mobileLogo img {
+                width: 150px;
+                position: relative;
+                left: 15%;
+                height: 100px;
+                object-fit: contain;
+            }
+    
+            .col-md-1.mobileLogo {
+                display: initial;
+            }
+        }*/
+@media only screen and (max-width: 575px) {
+    .jobTitle {
+        font-size: 17px;
+        margin-left: 13px;
+    }
+
+    .readMore {
+        margin-top: 4px;    
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .jobTitle {
+        font-size: 17px;
+    }
+
+    .readMore {
+        margin-top: 4px;
+    }
+}
+
+.right-padding-remover {
+    padding-right: 0 !important;
+    margin-top: 11px;
+}
+
+

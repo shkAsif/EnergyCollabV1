@@ -5,7 +5,7 @@
 
 @{
     ViewData["Title"] = "Index";
-    var vay = ViewData["vacancies"];
+    var vacancies = ViewData["vacancies"];
 }
 
 
@@ -304,7 +304,7 @@
         
     }
     <div class="jobs-pagination col-md-12">
-        @await Html.PartialAsync("Vacancies.cshtml",  vay)
+        @await Html.PartialAsync("Vacancies.cshtml", vacancies);
     </div>
 
 </div>

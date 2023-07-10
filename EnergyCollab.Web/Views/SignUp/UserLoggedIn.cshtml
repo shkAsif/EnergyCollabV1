@@ -110,7 +110,9 @@
             </div>
             <span class="col-md-12">Keep your CV updated so Employers can find you</span>
             <div class="search-vacancies col-md-12">
-                <button class="btn btn-primary">Search Vacancies</button>
+            <button class="btn btn-primary" onclick="location.href='@Url.Action("CompleteSearchVacancies", "JobSeeker")'">Search Vacancies </button>
+@*            <input type="button" class="btn btn-lg btn-primary m-4 col-5" id="SearchVacancies" value="Search Vacancies" onclick="location.href='@Url.Action("CompleteSearchVacancies", "JobSeeker")'  />
+*@
             </div>
             <span class="col-md-12">Search among thousands of available Vacancies</span>
         </div>

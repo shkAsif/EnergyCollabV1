@@ -43,7 +43,11 @@ namespace EnergyCollab.API
 
             CreateMap<SignUpDto, SignUp>().ReverseMap();
             CreateMap<LoginDto, Login>().ReverseMap();
-            CreateMap<CountryDto, Country>().ReverseMap();
+            
+            CreateMap<CountryDto, Country>()
+            .ForMember(i => i.Abbrivation, opt => opt.MapFrom(i => i.Abb))
+            .ReverseMap();
+
             CreateMap<ClientSignupDto, ClientSignup>().ReverseMap();
 
             CreateMap<Vacancy, VacancyDto>()
@@ -55,7 +59,8 @@ namespace EnergyCollab.API
            //.ForMember(i => i.EmpCategory, opt => opt.MapFrom(i => i.EmpCategory))
            .ForMember(x => x.EmpCategory, opt => opt.MapFrom(i => Helper.GetCategoryName((int)i.EmpCategory)))
            .ForMember(i => i.City, opt => opt.MapFrom(i => i.country.City))
-           .ForMember(i => i.Education, opt => opt.MapFrom(i => i.Education));
+           .ForMember(i => i.Education, opt => opt.MapFrom(i => i.Education))
+           .ForMember(i => i.Abb, opt => opt.MapFrom(i => i.country.Abbrivation));
 
         }
     }

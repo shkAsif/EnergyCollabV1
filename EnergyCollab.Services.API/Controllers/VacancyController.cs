@@ -57,8 +57,8 @@ namespace EnergyCollab.Services.API.Controllers
                     .AsNoTracking()
                     .Include(x => x.organization)
                     .Include(x => x.country)
-                    .Where(x => x.country.Name.Equals(country, StringComparison.OrdinalIgnoreCase)
-                            || x.JobTitle.Equals(jobTitle, StringComparison.OrdinalIgnoreCase))                     
+                    .Where(x => x.country.Name.ToLower().Equals(country.ToLower())
+                            || x.JobTitle.ToLower().Equals(jobTitle.ToLower())  )                   
                     .ToListAsync();
                  
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);

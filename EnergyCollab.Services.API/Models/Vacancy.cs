@@ -29,6 +29,8 @@ namespace EnergyCollab.Services.API.Models
 
         public Organization organization { get; set; }
         public int? organizationId { get; set; }
+        public Experience experience { get; set; }
+        public int? experienceId { get; set; }
 
 
     }
@@ -49,8 +51,13 @@ namespace EnergyCollab.Services.API.Models
             modelBuilder.HasOne(pt => pt.organization)
                 .WithMany(t => t.Vacancies)
                 .HasForeignKey(p => p.organizationId);
+
+            // Experience
+            modelBuilder.HasOne(pt => pt.experience)
+               .WithMany(t => t.Vacancies)
+               .HasForeignKey(p => p.experienceId);
         }
-            
+
     }
     //Todo Move to Constanc.cs file
     public enum Category

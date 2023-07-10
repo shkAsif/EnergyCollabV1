@@ -45,7 +45,14 @@ namespace EnergyCollab.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CompleteSearchVacancies(string country, string IndustryEnpeience, string EmploymentCategory, string Education, string SalaryAmount, string SalaryCurrency, string ExperienceCategory, string OrderBy)
+        public async Task<IActionResult> CompleteSearchVacancies(string country,
+            string IndustryEnpeience, 
+            string EmploymentCategory,
+            string Education, 
+            string SalaryAmount, 
+            string SalaryCurrency, 
+            string ExperienceCategory, 
+            string OrderBy)
         {
             var a = country;
             if (!String.IsNullOrEmpty(country))

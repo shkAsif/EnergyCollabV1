@@ -16,8 +16,7 @@ namespace EnergyCollab.Services.API.Models
         public bool Visa { get; set; }
         public bool ActivationStatus { get; set; }
         public bool IsActive { get; set; }
-        public int VacancyAdvertLength { get; set; }
-        //public int IndustryExperience { get; set; }
+        public int VacancyAdvertLength { get; set; }       
         public int Salary { get; set; }
         public string Education { get; set; } = string.Empty;
         public string ExperienceSummary { get; set; }

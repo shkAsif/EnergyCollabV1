@@ -7,6 +7,7 @@
 function search() {
 
     var obj_data = {
+        Country:"",
         CountryCode: $('#CountryCode').val(),
         SearchPhrase: $('#inputSearchPhrase').val(),
         OrderBy: $('#inputOrderBy').val()
@@ -19,7 +20,7 @@ function search() {
         url: '/JobSeeker/FilterQuickJobSearch',
         type: 'POST',
         data:JSON.stringify(obj_data),
-            contentType: 'application/json',
+        contentType: 'application/json',
             success: function (result) {
                 $('#jobResults').html(result);
             },

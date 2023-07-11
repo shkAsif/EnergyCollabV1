@@ -51,7 +51,7 @@ namespace EnergyCollab.Web.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> FilterQuickJobSearch(QuickJobSearch searchfilterata)
+        public async Task<IActionResult> FilterQuickJobSearch([FromBody]QuickJobSearch searchfilterata)
         {
             QuickJobSearch quickjobData = new QuickJobSearch();
             List<QuickJobSearch> vacancies = new List<QuickJobSearch>(); 

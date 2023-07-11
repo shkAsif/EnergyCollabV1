@@ -90,7 +90,7 @@ namespace EnergyCollab.Services.API.Controllers
                     .Include(x => x.country)
                     .Include(x => x.experience)
                     .Where(x =>
-                               x.country.Abbrivation.Equals(detailSearchViewModel.Abbrivation)
+                               x.country.CountryCode.Equals(detailSearchViewModel.CountryCode)
                             || x.experience.Range.Equals(detailSearchViewModel.experience))
                     ///EmpCat,Salary, Educ, ExpCat
                     .OrderBy(x => x.country.Name)

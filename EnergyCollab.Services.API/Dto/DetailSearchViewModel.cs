@@ -8,7 +8,7 @@ namespace EnergyCollab.Services.API.Dto
 {
     public class DetailSearchViewModel
     {
-        public string Abbrivation { get; set; } = string.Empty;             
+        public string CountryCode { get; set; } = string.Empty;             
         public string experience { get; set; } = string.Empty;          
       
     }

@@ -8,7 +8,7 @@ namespace EnergyCollab.Web.Service.IService
         Task<ResponseDto?> CreateUserSignUp(SignUpDto signUp);
         Task<ResponseDto?> UserLogin(LoginDto userLogin);
 
-        Task<ResponseDto?> CreateClientAccount(ClientSignUpDto client , string plan);
+        Task<ResponseDto?> CreateClientAccount(ClientSignUpDto client);
 
 
     }

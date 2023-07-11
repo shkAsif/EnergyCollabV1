@@ -53,6 +53,10 @@ namespace EnergyCollab.Web.Controllers
             {
 
                 var result = response.Result;
+                if (UserLogin.EmailId == "admin@gmail.com")
+                {
+                    return View("~/Views/Client/ClientDashboard.cshtml");
+                }
                 return View("~/Views/SignUp/UserLoggedIn.cshtml");
             }
             else

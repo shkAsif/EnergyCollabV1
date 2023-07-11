@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EnergyCollab.Services.API.Controllers
 {
-    [Route("api/client")]
+    [Route("api/client")]    
     public class ClientController : Controller
     {
         private readonly AppDbContext _db;
@@ -26,8 +26,8 @@ namespace EnergyCollab.Services.API.Controllers
 
         // POST: ClientController/Create
         [HttpPost]
-        [Route("ClentSignUp")]
-        public ResponseDto ClentSignUp(ClientSignupDto clientDto)
+        [Route("ClientSignUp")]
+        public ResponseDto ClentSignUp([FromBody] ClientSignupDto clientDto)
         {
             try
             {

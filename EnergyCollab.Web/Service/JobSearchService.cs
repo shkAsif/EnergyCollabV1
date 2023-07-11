@@ -29,6 +29,15 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/vacancy/getall"
             });
         }
+        public async Task<ResponseDto?> FilterBasicSearchJob(QuickJobSearch quickjobData)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                Data = quickjobData,
+                ApiType = SD.ApiType.GET,
+                Url = SD.CandidateAPIBase + "/api/vacancy/search"
+            });
+        }
 
         public async Task<ResponseDto?> CompleteJobSearch()
         {
@@ -38,5 +47,7 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/vacancy/"
             });
         }
+
+        
     }
 }

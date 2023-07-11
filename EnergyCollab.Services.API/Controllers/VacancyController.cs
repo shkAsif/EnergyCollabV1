@@ -49,7 +49,7 @@ namespace EnergyCollab.Services.API.Controllers
 
         [Route("search")]
         [HttpGet]
-        public async Task<IActionResult> SearchVacany(string country = "", string jobTitle = "")
+        public async Task<IActionResult> SearchVacancy(FilterQuickJobSearchDto quickjobData)
         {
             try
             {
@@ -57,8 +57,8 @@ namespace EnergyCollab.Services.API.Controllers
                     .AsNoTracking()
                     .Include(x => x.organization)
                     .Include(x => x.country)
-                    .Where(x => x.country.Name.ToLower().Equals(country.ToLower())
-                            || x.JobTitle.ToLower().Equals(jobTitle.ToLower()))
+                    .Where(x => x.country.CountryCode.ToLower().Equals(quickjobData.CountryCode.ToLower())
+                            || x.JobTitle.ToLower().Equals(quickjobData.SearchPhrase.ToLower()))
                     .ToListAsync();
 
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
@@ -98,8 +98,6 @@ namespace EnergyCollab.Services.API.Controllers
 
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
                 return Ok(_response);
-
-
             }
             catch (Exception ex)
             {

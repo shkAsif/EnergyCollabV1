@@ -29,7 +29,10 @@ namespace EnergyCollab.Web.Controllers
         {
             string clientPlan = TempData["plan"].ToString();
             TempData.Keep("plan");
-            ResponseDto? response = await _signUpService.CreateClientAccount(clientDto, clientPlan);
+            clientDto.Plan = clientPlan;
+            return RedirectToAction("Login", "Signup");
+
+            ResponseDto? response = await _signUpService.CreateClientAccount(clientDto);
 
             if (response != null && response.IsSuccess)
             {
@@ -40,7 +43,7 @@ namespace EnergyCollab.Web.Controllers
                 TempData["error"] = response?.Message;
             }
 
-            return View();
+            return View("~/Views/SignUp/Login.cshtml");
         }
 
     }

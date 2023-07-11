@@ -7,16 +7,19 @@
     ViewData["Title"] = "Index";
     var vacancies = ViewData["vacancies"];
 }
-
+<script type="text/javascript">
+    function search1() {
+        alert("how are you");
+    }
+</script>
 
 <div id="partial-wrapper" class="container animated fadeIn">
     <h1>QUICK JOBS SEARCH</h1>
-    <form id="quick-jobs-search-form" class="row">
+    <form id="quick-jobs-search-form" class="row" aps-controller="" asp-action="">
         <div class="row col-md-12 justify-content-between">
             <div class="form-group col-md-4 col-sm-12 col-xs-12">
                 <label for="inputCountry">@Html.DisplayNameFor(model => model.Country):</label>
-
-                @Html.DropDownList("SelectedCountryId", ViewData["Countries"] as List<SelectListItem>, "Select a country", new { @class = "form-control p-2" })
+                @Html.DropDownList("CountryCode", ViewData["Countries"] as List<SelectListItem>, "Select a country", new { @class = "form-control p-2"  , Name = "CountryCode"})
 
 @*                <select id="inputCountry" name="inputCountry" class="p-2">
                     <option value="">All</option>
@@ -264,7 +267,7 @@
 *@            </div>
             <div class="form-group col-md-2 col-sm-12 col-xs-12 ">
                 <label for="inputOrderBy"> @Html.DisplayNameFor(model => model.OrderBy):</label>
-                <select id="inputOrderBy" name="inputOrderBy" class="p-2">
+                <select id="inputOrderBy" name="OrderBy" class="p-2">
                     <option value="cityName">City Name</option>
                     <option selected value="jobTitle">Job Title</option>
                     <option value="postedDate">Job Posted Date</option>
@@ -275,9 +278,9 @@
             <div class="form-group col-md-12">
                 <label class="control-label">Enter  @Html.DisplayNameFor(model => model.SearchPhrase) and click "Search"</label>
                 <div class="input-group merged">
-                    <input id="inputSearchPhrase" name="inputSearchPhrase" class="form-control p-2" placeholder="Type a part of what are you looking for..." type="text">
+                    <input id="inputSearchPhrase" name="SearchPhrase" class="form-control p-2" placeholder="Type a part of what are you looking for..." type="text">
                     <span class="input-group-btn">
-                        <button class="btn btn-success p-2" type="submit">
+                        <button class="btn btn-success p-2" onclick="search()" type="button">
                             <span>Search</span>&nbsp;<i class="fa fa-search"></i>
                         </button>
                     </span>
@@ -303,9 +306,10 @@
         //}
         
     }
-    <div class="jobs-pagination col-md-12">
-        @await Html.PartialAsync("Vacancies.cshtml", vacancies);
+    <div class="jobs-pagination" id ="jobResults"col-md-12">
+        @await Html.PartialAsync("~/Views/Shared/Vacancies.cshtml", vacancies);
     </div>
 
 </div>
+
 

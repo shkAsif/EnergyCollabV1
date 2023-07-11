@@ -17,19 +17,22 @@ namespace EnergyCollab.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> QuickJobSearch()
+        public async Task<IActionResult> QuickJobSearch(QuickJobSearch quickjobData)
+
         {
+
             ResponseDto? response = await _jobSearchService.Country();
             ResponseDto? JobResult = await _jobSearchService.SearchJob();
             if (response != null && response.IsSuccess)
             {
+
 
                 List<CountryDto> countries = JsonConvert.DeserializeObject<List<CountryDto>>(Convert.ToString(response.Result));
                 List<VacancyDto> vacancies = JsonConvert.DeserializeObject<List<VacancyDto>>(Convert.ToString(JobResult.Result));
 
                 var countrySelectList = countries.Select(c => new SelectListItem
                 {
-                    Value = c.City.ToString(),
+                    Value = c.CountryCode,
                     Text = c.Name
                 }).ToList();
                 ViewData["Countries"] = countrySelectList;
@@ -41,6 +44,35 @@ namespace EnergyCollab.Web.Controllers
             }
 
             return View();
+
+        }
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> FilterQuickJobSearch(QuickJobSearch searchfilterata)
+        {
+            QuickJobSearch quickjobData = new QuickJobSearch();
+            List<QuickJobSearch> vacancies = new List<QuickJobSearch>(); 
+            ResponseDto? response = await _jobSearchService.FilterBasicSearchJob(quickjobData);
+            if (response != null && response.IsSuccess)
+            {
+                
+                    // vacancies = JsonConvert.DeserializeObject<List<QuickJobSearch>>(Convert.ToString(response.Result));
+
+              //  ViewData["vacancies"] = vacancies;
+
+
+
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
+            }
+
+            //return View();
+            return PartialView("~/Views/Shared/Vacancies.cshtml", vacancies);
 
         }
 
@@ -84,8 +116,6 @@ namespace EnergyCollab.Web.Controllers
             else
             {
                 return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
-
-
             }
 
         }

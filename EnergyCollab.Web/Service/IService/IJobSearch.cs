@@ -6,5 +6,6 @@ namespace EnergyCollab.Web.Service.IService
     {
         Task<ResponseDto?> Country();
         Task<ResponseDto?> SearchJob();
+        Task<ResponseDto?> FilterBasicSearchJob(QuickJobSearch quickjobData);
     }
 }

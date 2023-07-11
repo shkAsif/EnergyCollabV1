@@ -16,26 +16,7 @@ using System.Threading.Tasks;
 namespace EnergyCollab.API
 {
     public class MappingConfig : Profile
-    {
-        //public static MapperConfiguration RegisterMaps()
-        //{
-        //    var mappingConfig = new MapperConfiguration(config =>
-        //    {
-        //        config.CreateMap<CandidateProfileDto, CandidateProfile>();
-        //        config.CreateMap<CandidateProfile, CandidateProfileDto>();
-
-        //        config.CreateMap<SignUpDto, SignUp>().ReverseMap();
-        //        config.CreateMap<LoginDto, Login>().ReverseMap();
-        //        config.CreateMap<CountryDto, Country>().ReverseMap();
-        //        config.CreateMap<ClientSignupDto, ClientSignup>().ReverseMap();
-
-
-
-
-
-        //    });
-        //    return mappingConfig;
-        //}
+    {        
         public MappingConfig()
         {
             CreateMap<CandidateProfileDto, CandidateProfile>();
@@ -48,7 +29,7 @@ namespace EnergyCollab.API
             .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.CountryCode))
             .ReverseMap();
 
-            CreateMap<ClientSignupDto, ClientSignup>().ReverseMap();
+            CreateMap<ClientSignup, ClientSignupDto>().ReverseMap();
 
             CreateMap<Vacancy, VacancyDto>()
            .ForMember(i => i.JobTitle, opt => opt.MapFrom(i => i.JobTitle))

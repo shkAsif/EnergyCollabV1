@@ -1,7 +1,6 @@
 ﻿using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
-
 namespace EnergyCollab.Web.Service
 {
     public class CandidateService : ICandidateProfileService
@@ -11,8 +10,6 @@ namespace EnergyCollab.Web.Service
         {
             _baseService = baseService;
         }
-
-
         public async Task<ResponseDto?> CreateCandidateAsync(CandidateProfileDto candidateProfileDto)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -22,7 +19,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/CandidateProfile"
             });
         }
-
         public async Task<ResponseDto?> DeleteCandidatesAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -31,7 +27,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/candidateprofile/" + id
             });
         }
-
         public async Task<ResponseDto?> GetAllCandidatesAsync()
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -40,7 +35,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/candidateprofile"
             });
         }
-
         public async Task<ResponseDto?> GetCandidateAsync(string userAccountId)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -49,7 +43,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/candidateprofile/GetByCode/" + userAccountId
             });
         }
-
         public async Task<ResponseDto?> GetCandidateByIdAsync(int id)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -58,7 +51,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/candidateprofile/" + id
             });
         }
-
         public async Task<ResponseDto?> UpdateCandidatesAsync(CandidateProfileDto candidateProfileDto)
         {
             return await _baseService.SendAsync(new RequestDto()

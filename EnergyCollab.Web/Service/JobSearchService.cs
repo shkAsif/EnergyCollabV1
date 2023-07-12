@@ -1,7 +1,6 @@
 ﻿using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
-
 namespace EnergyCollab.Web.Service
 {
     public class JobSearchService : IJobSearch
@@ -18,9 +17,7 @@ namespace EnergyCollab.Web.Service
                 ApiType = SD.ApiType.GET,               
                 Url = SD.CandidateAPIBase + "/api/country/GetCountries"
             });
-
         }
-
         public async Task<ResponseDto?> SearchJob()
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -33,12 +30,11 @@ namespace EnergyCollab.Web.Service
         {
             return await _baseService.SendAsync(new RequestDto()
             {
-                Data = quickjobData,
+                Data = quickjobData,    
                 ApiType = SD.ApiType.GET,
                 Url = SD.CandidateAPIBase + "/api/vacancy/search"
             });
         }
-
         public async Task<ResponseDto?> CompleteJobSearch()
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -47,7 +43,5 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/vacancy/"
             });
         }
-
-        
     }
 }

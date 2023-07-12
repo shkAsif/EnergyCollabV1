@@ -9,25 +9,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
-
 namespace EnergyCollab.Services.API.Controllers
 {
     [Route("api/signup")]
     public class SignUpController : Controller
     {
-
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-
-
         public SignUpController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-
         [HttpGet]
         public ResponseDto Get()
         {
@@ -43,7 +38,6 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
         [HttpPost]
         //[Authorize(Roles = "ADMIN")]
         public ResponseDto Post([FromBody] SignUpDto signUpDto)
@@ -53,7 +47,6 @@ namespace EnergyCollab.Services.API.Controllers
                 SignUp obj = _mapper.Map<SignUp>(signUpDto);
                 _db.SignUps.Add(obj);
                 _db.SaveChanges();
-
                 _response.Result = _mapper.Map<SignUpDto>(obj);
             }
             catch (Exception ex)
@@ -63,7 +56,6 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
         [HttpPost]
         [Route("login")]
         //[Authorize(Roles = "ADMIN")]
@@ -74,7 +66,6 @@ namespace EnergyCollab.Services.API.Controllers
                 Login loginObj = _mapper.Map<Login>(loginDto);
                 _db.Logins.Add(loginObj);
                 _db.SaveChanges();
-
                 _response.Result = _mapper.Map<LoginDto>(loginObj);
             }
             catch (Exception ex)
@@ -84,7 +75,5 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
-
     }
 }

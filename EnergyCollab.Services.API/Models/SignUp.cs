@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Web.Models
 {
     public class SignUp
     {
-        
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }

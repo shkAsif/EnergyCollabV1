@@ -1,13 +1,11 @@
 ﻿using EnergyCollab.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
 namespace EnergyCollab.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,7 +13,6 @@ namespace EnergyCollab.Web.Controllers
         [HttpGet]
         public IActionResult Index(string id)
         {
-
             if (id == "JobSeekerLogin")
             {
                 return RedirectToAction("Login", "Signup");
@@ -45,12 +42,10 @@ namespace EnergyCollab.Web.Controllers
             }
             //return RedirectToAction("CreateSignUp", "Signup");
         }
-
         public IActionResult Privacy()
         {
             return View();
         }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -3,7 +3,6 @@ using EnergyCollab.Web.Service;
 using EnergyCollab.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace EnergyCollab.Web.Controllers
 {
     public class ClientController : Controller
@@ -13,8 +12,6 @@ namespace EnergyCollab.Web.Controllers
         {
             _signUpService = signUpService;
         }
-
-
         [HttpGet]
         public IActionResult ClientSignUpPage(string plan)
         {
@@ -22,8 +19,6 @@ namespace EnergyCollab.Web.Controllers
                 return View();
             //return View("~/Views/Home/ClientSignUp.)
         }
-
-
         [HttpPost]
         public async Task<IActionResult> ClientSignUpPage(ClientSignUpDto clientDto)
         {
@@ -31,9 +26,7 @@ namespace EnergyCollab.Web.Controllers
             TempData.Keep("plan");
             clientDto.Plan = clientPlan;
             return RedirectToAction("Login", "Signup");
-
             ResponseDto? response = await _signUpService.CreateClientAccount(clientDto);
-
             if (response != null && response.IsSuccess)
             {
                 var result = response.Result;
@@ -42,9 +35,7 @@ namespace EnergyCollab.Web.Controllers
             {
                 TempData["error"] = response?.Message;
             }
-
             return View("~/Views/SignUp/Login.cshtml");
         }
-
     }
 }

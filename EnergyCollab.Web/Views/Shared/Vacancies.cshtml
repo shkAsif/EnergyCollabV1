@@ -1,46 +1,36 @@
 ﻿@model IEnumerable<EnergyCollab.Web.Models.VacancyDto>
-
 <style>
-
     .container {
         padding: 2rem;
     }
-
     .jobs-list {
         border: 1px solid #e3e3e3;
         height: 10rem;
         padding: 1rem;
     }
-
         .jobs-list:hover {
             background-color: #f9fcf3;
         }
-
     .days-ago {
         margin: 0 0 0 88%;
     }
-
     .country-city {
         color: #80bd01;
         background-color: #f5fbe7;
         text-align: center;
         padding: 0.20rem;
     }
-
     .read-more-btn {
         background-color: #fff;
         color: #80bd01;
         border: 1px solid#80bd01;
         transition: 0.2s;
     }
-
         .read-more-btn:hover {
             background-color: #80bd01;
             color: white;
         }
 </style>
-
-
 @*<thead>
         <tr>
             <th>
@@ -70,7 +60,6 @@
             <th></th>
         </tr>
     </thead>*@
-
 @* //<td>
                         //    @Html.DisplayFor(modelItem => item.Responsibilities)
                         //</td>
@@ -88,7 +77,6 @@
     {
         @foreach (var item in Model)
         {
-
             <div class="container">
                 <div class="row jobs-list">
                     <div class="row text-left ">

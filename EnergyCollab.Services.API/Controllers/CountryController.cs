@@ -5,7 +5,6 @@ using EnergyCollab.Models;
 using EnergyCollab.Services.API.Dto;
 using EnergyCollab.Services.API.Models;
 using Microsoft.AspNetCore.Mvc;
-
 namespace EnergyCollab.Services.API.Controllers
 {
     [Route("api/country")]
@@ -14,14 +13,12 @@ namespace EnergyCollab.Services.API.Controllers
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private readonly IMapper _mapper;
-
         public CountryController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-
         [HttpGet]
         [Route("GetCountries")]
         public ResponseDto GetCountries()

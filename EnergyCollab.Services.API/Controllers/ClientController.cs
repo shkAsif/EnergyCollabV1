@@ -6,7 +6,6 @@ using EnergyCollab.Services.API.Dto;
 using EnergyCollab.Services.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 namespace EnergyCollab.Services.API.Controllers
 {
     [Route("api/client")]    
@@ -15,15 +14,12 @@ namespace EnergyCollab.Services.API.Controllers
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-
         public ClientController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-       
-
         // POST: ClientController/Create
         [HttpPost]
         [Route("ClientSignUp")]
@@ -34,7 +30,6 @@ namespace EnergyCollab.Services.API.Controllers
                 var obj = _mapper.Map<ClientSignup>(clientDto);
                 _db.ClientSignups.Add(obj);
                 _db.SaveChanges();
-
                 _response.Result = _mapper.Map<ClientSignupDto>(obj);
             }
             catch (Exception ex)
@@ -44,9 +39,6 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
         // GET: ClientController/Edit/5
-       
-        
     }
 }

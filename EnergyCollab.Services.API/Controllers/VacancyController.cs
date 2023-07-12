@@ -6,25 +6,21 @@ using EnergyCollab.Services.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-
 namespace EnergyCollab.Services.API.Controllers
 {
     [Route("api/vacancy")]
     [ApiController]
     public class VacancyController : ControllerBase
     {
-
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-
         public VacancyController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-
         [Route("GetAll")]
         [HttpGet]
         public ResponseDto Get()
@@ -45,8 +41,6 @@ namespace EnergyCollab.Services.API.Controllers
             }
             return _response;
         }
-
-
         [Route("search")]
         [HttpGet]
         public async Task<IActionResult> SearchVacancy(FilterQuickJobSearchDto quickjobData)
@@ -60,24 +54,16 @@ namespace EnergyCollab.Services.API.Controllers
                     .Where(x => x.country.CountryCode.ToLower().Equals(quickjobData.CountryCode.ToLower())
                             || x.JobTitle.ToLower().Equals(quickjobData.SearchPhrase.ToLower()))
                     .ToListAsync();
-
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
                 return Ok(_response);
-
-
             }
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
                 return BadRequest();
-
             }
-
         }
-
-
-
         [Route("detailsearch")]
         [HttpPost]
         public async Task<IActionResult> DetailSearchVacany(DetailSearchViewModel detailSearchViewModel)
@@ -95,7 +81,6 @@ namespace EnergyCollab.Services.API.Controllers
                     ///EmpCat,Salary, Educ, ExpCat
                     .OrderBy(x => x.country.Name)
                     .ToListAsync();
-
                 _response.Result = _mapper.Map<IEnumerable<VacancyDto>>(vacancies);
                 return Ok(_response);
             }
@@ -104,10 +89,7 @@ namespace EnergyCollab.Services.API.Controllers
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
                 return BadRequest();
-
             }
-
         }
-
     }
 }

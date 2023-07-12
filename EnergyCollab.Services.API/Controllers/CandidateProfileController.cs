@@ -6,25 +6,21 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
-
 namespace EnergyCollab.API.Controllers
 {
     [Route("api/candidateprofile")]
     [ApiController]
     public class CandidateProfileController : ControllerBase
     {
-
         private readonly AppDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-
         public CandidateProfileController(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-
         [HttpGet]
         public ResponseDto Get()
         {
@@ -40,7 +36,6 @@ namespace EnergyCollab.API.Controllers
             }
             return _response;
         }
-
         [HttpGet]
         [Route("{id:int}")]
         public ResponseDto Get(int id)         
@@ -57,7 +52,6 @@ namespace EnergyCollab.API.Controllers
             }
             return _response;
         }
-
         [HttpGet]
         [Route("GetByCode/{code}")]
         public ResponseDto GetByCode(Guid code)
@@ -74,7 +68,6 @@ namespace EnergyCollab.API.Controllers
             }
             return _response;
         }
-
         [HttpPost]
         //[Authorize(Roles = "ADMIN")]
         public ResponseDto Post([FromBody] CandidateProfileDto candidateProfileDto)
@@ -84,7 +77,6 @@ namespace EnergyCollab.API.Controllers
                 CandidateProfile obj = _mapper.Map<CandidateProfile>(candidateProfileDto);
                 _db.CandidateProfiles.Add(obj);
                 _db.SaveChanges();
-
                 _response.Result = _mapper.Map<CandidateProfileDto>(obj);
             }
             catch (Exception ex)
@@ -94,7 +86,6 @@ namespace EnergyCollab.API.Controllers
             }
             return _response;
         }
-
         [HttpPut]
         //[Authorize(Roles = "ADMIN")]
         public ResponseDto Put([FromBody] CandidateProfileDto candidateProfileDto)
@@ -104,7 +95,6 @@ namespace EnergyCollab.API.Controllers
                 CandidateProfile obj = _mapper.Map<CandidateProfile>(candidateProfileDto);
                 _db.CandidateProfiles.Update(obj);
                 _db.SaveChanges();
-
                 _response.Result = _mapper.Map<CandidateProfileDto>(obj);
             }
             catch (Exception ex)
@@ -114,7 +104,6 @@ namespace EnergyCollab.API.Controllers
             }
             return _response;
         }
-
         [HttpDelete]
         [Route("{id:int}")]
         //[Authorize(Roles = "ADMIN")]

@@ -1,22 +1,18 @@
 html {
   font-size: 14px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
 html {
   position: relative;
   min-height: 100%;
 }
-
 body {
   margin-bottom: 60px;
 }
@@ -24,19 +20,15 @@ body {
 .contentadd {
     display: none;
 }
-
 section.main {
     margin-top: 80px !important;
 }
-
 .navbar {
     margin-top: 0px;
 }
-
 .head-btm {
     display: none;
 }
-
 .tile {
     border: 1px solid #E3E3E3;
     cursor: pointer;
@@ -45,7 +37,6 @@ section.main {
     border-radius: 4px;
     color: #000;
 }
-
 .img-thumbnail {
     padding: 2px;
     line-height: 1.42857143;
@@ -59,15 +50,12 @@ section.main {
     max-width: 100%;
     height: 32px;
 }
-
 table.table-responsive {
     width: 100%;
     display: block;
     overflow-y: scroll;
     height: 477px;
 }
-
-
 table-bordered > thead > tr > th,
 .table-bordered > thead > tr > th,
 table-bordered > tbody > tr > th,
@@ -83,8 +71,6 @@ table-bordered > tfoot > tr > td,
     border: 1px solid #ecf0f1;
     width: 10%;
 }
-
-
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
 .table > thead:first-child > tr:first-child > th,
@@ -97,7 +83,6 @@ table-bordered > tfoot > tr > td,
     color: #fff;
     text-align: center;
 }
-
 @media only screen and (max-width: 768px) {
     .col-md-1.mobileLogo img {
         width: 191px;
@@ -106,12 +91,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -120,12 +103,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -134,7 +115,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -147,12 +127,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -161,12 +139,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -175,7 +151,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -188,12 +163,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -202,12 +175,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -216,7 +187,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -229,12 +199,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -243,12 +211,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -257,7 +223,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -270,12 +235,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -284,12 +247,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -298,7 +259,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -311,12 +271,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -325,12 +283,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -339,7 +295,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -352,12 +307,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -366,12 +319,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -380,7 +331,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -393,12 +343,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -407,12 +355,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -421,7 +367,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -434,12 +379,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -448,12 +391,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -462,7 +403,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -475,12 +415,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -489,12 +427,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -503,7 +439,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -516,12 +451,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -530,12 +463,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -544,7 +475,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -557,12 +487,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -571,12 +499,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -585,7 +511,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -598,12 +523,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -612,12 +535,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -626,7 +547,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -639,12 +559,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -653,12 +571,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -667,7 +583,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -680,12 +595,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -694,12 +607,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -708,7 +619,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -721,12 +631,10 @@ table-bordered > tfoot > tr > td,
         height: 95px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 @media only screen and (max-width: 575px) {
     .col-md-1.mobileLogo img {
         width: 150px;
@@ -735,12 +643,10 @@ table-bordered > tfoot > tr > td,
         height: 100px;
         object-fit: contain;
     }
-
     .col-md-1.mobileLogo {
         display: initial;
     }
 }
-
 /*@media only screen and (max-width: 420px) {
             .col-md-1.mobileLogo img {
                 width: 150px;
@@ -749,7 +655,6 @@ table-bordered > tfoot > tr > td,
                 height: 100px;
                 object-fit: contain;
             }
-    
             .col-md-1.mobileLogo {
                 display: initial;
             }
@@ -759,25 +664,19 @@ table-bordered > tfoot > tr > td,
         font-size: 17px;
         margin-left: 13px;
     }
-
     .readMore {
         margin-top: 4px;    
     }
 }
-
 @media only screen and (max-width: 480px) {
     .jobTitle {
         font-size: 17px;
     }
-
     .readMore {
         margin-top: 4px;
     }
 }
-
 .right-padding-remover {
     padding-right: 0 !important;
     margin-top: 11px;
 }
-
-

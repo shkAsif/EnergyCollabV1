@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Web.Utility
 {
     public class AllowedExtensionsAttribute : ValidationAttribute
@@ -9,11 +8,9 @@ namespace EnergyCollab.Web.Utility
         {
             _extensions = extensions;
         }
-
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             var file = value as IFormFile;
-
             if (file != null)
             {
                 var extension = Path.GetExtension(file.FileName);
@@ -22,9 +19,7 @@ namespace EnergyCollab.Web.Utility
                     return new ValidationResult("This photo extension is not allowed!");
                 }
             }
-
             return ValidationResult.Success;
         }
-
     }
 }

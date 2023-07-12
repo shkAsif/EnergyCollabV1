@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-
 namespace EnergyCollab.Services.API.Dto
 {
     public class LoginDto
@@ -8,7 +7,6 @@ namespace EnergyCollab.Services.API.Dto
         [Required]
         [EmailAddress]
         public string EmailId { get; set; }
-
         [Required]
         [PasswordPropertyText]
         public string Password { get; set; }

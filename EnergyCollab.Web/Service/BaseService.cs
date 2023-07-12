@@ -4,18 +4,15 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 using static EnergyCollab.Web.Utility.SD;
-
 namespace EnergyCollab.Web.Service
 {
     public class BaseService : IBaseService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
         public BaseService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true)
         {
             try
@@ -36,13 +33,10 @@ namespace EnergyCollab.Web.Service
                 //    var token = _tokenProvider.GetToken();
                 //    message.Headers.Add("Authorization", $"Bearer {token}");
                 //}
-
                 message.RequestUri = new Uri(requestDto.Url);
-
                 if (requestDto.ContentType == ContentType.MultipartFormData)
                 {
                     var content = new MultipartFormDataContent();
-
                     foreach (var prop in requestDto.Data.GetType().GetProperties())
                     {
                         var value = prop.GetValue(requestDto.Data);
@@ -68,9 +62,7 @@ namespace EnergyCollab.Web.Service
                         message.Content = new StringContent(JsonConvert.SerializeObject(requestDto.Data), Encoding.UTF8, "application/json");
                     }
                 }
-
                 HttpResponseMessage? apiResponse = null;
-
                 switch (requestDto.ApiType)
                 {
                     case ApiType.POST:
@@ -86,9 +78,7 @@ namespace EnergyCollab.Web.Service
                         message.Method = HttpMethod.Get;
                         break;
                 }
-
                 apiResponse = await client.SendAsync(message);
-
                 switch (apiResponse.StatusCode)
                 {
                     case HttpStatusCode.NotFound:

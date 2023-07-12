@@ -1,10 +1,8 @@
 ﻿using EnergyCollab.Web.Models;
-
 namespace EnergyCollab.Web.Service.IService
 {
     public interface ICandidateProfileService
     {
-
         Task<ResponseDto?> GetCandidateAsync(string userAccountId);
         Task<ResponseDto?> GetAllCandidatesAsync();
         Task<ResponseDto?> GetCandidateByIdAsync(int id);

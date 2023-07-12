@@ -10,7 +10,6 @@
                 2 => "FullTime",
                 3 => "PartTime"
             };
-
             return result;
         }
     }

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Services.API.Dto
 {
     public class ClientSignupDto

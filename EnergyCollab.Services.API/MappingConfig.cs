@@ -12,7 +12,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace EnergyCollab.API
 {
     public class MappingConfig : Profile
@@ -21,16 +20,12 @@ namespace EnergyCollab.API
         {
             CreateMap<CandidateProfileDto, CandidateProfile>();
             CreateMap<CandidateProfile, CandidateProfileDto>();
-
             CreateMap<SignUpDto, SignUp>().ReverseMap();
             CreateMap<LoginDto, Login>().ReverseMap();
-            
             CreateMap<CountryDto, Country>()
             .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.CountryCode))
             .ReverseMap();
-
             CreateMap<ClientSignup, ClientSignupDto>().ReverseMap();
-
             CreateMap<Vacancy, VacancyDto>()
            .ForMember(i => i.JobTitle, opt => opt.MapFrom(i => i.JobTitle))
            .ForMember(i => i.CompanyName, opt => opt.MapFrom(i => i.organization.Name))
@@ -43,9 +38,7 @@ namespace EnergyCollab.API
            .ForMember(i => i.Education, opt => opt.MapFrom(i => i.Education))
            .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.country.CountryCode))
            .ForMember(i => i.Experience, opt => opt.MapFrom(i => i.experience.Range))
-           
            ;
-
         }
     }
 }

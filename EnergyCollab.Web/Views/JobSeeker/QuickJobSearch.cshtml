@@ -1,8 +1,6 @@
 ﻿@*partial view namespace*@
 @using EnergyCollab.Web.Models
 @model QuickJobSearch
-
-
 @{
     ViewData["Title"] = "Index";
     var vacancies = ViewData["vacancies"];
@@ -12,7 +10,6 @@
         alert("how are you");
     }
 </script>
-
 <div id="partial-wrapper" class="container animated fadeIn">
     <h1>QUICK JOBS SEARCH</h1>
     <form id="quick-jobs-search-form" class="row" aps-controller="" asp-action="">
@@ -20,7 +17,6 @@
             <div class="form-group col-md-4 col-sm-12 col-xs-12">
                 <label for="inputCountry">@Html.DisplayNameFor(model => model.Country):</label>
                 @Html.DropDownList("CountryCode", ViewData["Countries"] as List<SelectListItem>, "Select a country", new { @class = "form-control p-2"  , Name = "CountryCode"})
-
 @*                <select id="inputCountry" name="inputCountry" class="p-2">
                     <option value="">All</option>
                     <option value="af">Afghanistan</option>
@@ -288,7 +284,6 @@
             </div>
         </div>
     </form>
-
     <!-- not found alert -->
     <div id="not-found-jobs-wrapper" class="row" style="display: none;">
         <div class="col-md-12 remove-padding">
@@ -298,18 +293,13 @@
             </div>
         </div>
     </div>
-
     @{
         //if(ViewBag.vacancies != null)
         //{
         //    @Html.Partial("~/Views/JobSeeker/Vacancies.cshtml");
         //}
-        
     }
     <div class="jobs-pagination" id ="jobResults"col-md-12">
         @await Html.PartialAsync("~/Views/Shared/Vacancies.cshtml", vacancies);
     </div>
-
 </div>
-
-

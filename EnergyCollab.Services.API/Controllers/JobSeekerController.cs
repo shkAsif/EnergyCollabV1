@@ -9,7 +9,6 @@ using EnergyCollab.API.Data;
 using EnergyCollab.Web.Models;
 using AutoMapper;
 using EnergyCollab.API.Dto;
-
 namespace EnergyCollab.Services.API.Controllers
 {
     public class JobSeekerController : Controller
@@ -17,14 +16,12 @@ namespace EnergyCollab.Services.API.Controllers
         private readonly AppDbContext _context;
         private ResponseDto _response;
         private IMapper _mapper;
-
         public JobSeekerController(AppDbContext context , IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
             _response = new ResponseDto();
         }
-
         // GET: JobSeeker
         //public async Task<IActionResult> Index()
         //{
@@ -32,15 +29,11 @@ namespace EnergyCollab.Services.API.Controllers
         //    //            View(await _context.JobSeekerLogin.ToListAsync()) :
         //    //            Problem("Entity set 'AppDbContext.JobSeekerLoginModel'  is null.")/*;*/
         //}
-
-
-
         // GET: JobSeeker/Create
         public IActionResult Create()
         {
             return View();
         }
-
         // POST: JobSeeker/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -57,5 +50,4 @@ namespace EnergyCollab.Services.API.Controllers
             return View(jobSeekerLogin);
         }
     }
-      
 }

@@ -1,9 +1,7 @@
 ﻿@model EnergyCollab.Web.Models.LoginDto
-
 @{
     ViewData["Title"] = "Login";
 }
-
 <h1>Login</h1>
 <hr />
 <div class="row">
@@ -26,11 +24,9 @@
         </form>
     </div>
 </div>
-
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

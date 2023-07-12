@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Services.API.Models
 {
     public class ClientSignup
@@ -14,7 +13,6 @@ namespace EnergyCollab.Services.API.Models
         public string? LastName { get; set; }
         [Required]
         public string Password { get; set; }
-
         public string? ConfirmPassword { get; set; }
         public string? Plan { get; set; } //silver , gold , platinum
         public DateTime CreatedDated { get; set; } = DateTime.Now;

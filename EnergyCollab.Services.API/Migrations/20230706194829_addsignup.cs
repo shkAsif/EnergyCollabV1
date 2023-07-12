@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
@@ -16,7 +14,6 @@ namespace EnergyCollab.Services.API.Migrations
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
-
             migrationBuilder.AddColumn<string>(
                 name: "LoginUser",
                 table: "SignUps",
@@ -24,14 +21,12 @@ namespace EnergyCollab.Services.API.Migrations
                 nullable: false,
                 defaultValue: "");
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
                 name: "CompanyName",
                 table: "SignUps");
-
             migrationBuilder.DropColumn(
                 name: "LoginUser",
                 table: "SignUps");

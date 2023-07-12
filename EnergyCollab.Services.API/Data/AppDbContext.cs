@@ -7,16 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using EnergyCollab.Web.Models;
 using EnergyCollab.Services.API.Models;
-
 namespace EnergyCollab.API.Data
 {
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
-
         public DbSet<CandidateProfile> CandidateProfiles { get; set; }
         public DbSet<SignUp> SignUps { get; set; }
         public DbSet<Login> Logins { get; set; }
@@ -25,16 +22,10 @@ namespace EnergyCollab.API.Data
         public DbSet<ClientSignup> ClientSignups { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
-
-
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
         }
-
        // public DbSet<EnergyCollab.Web.Models.JobSeekerLogin> JobSeekerLogin { get; set; } = default!;
     }
 }

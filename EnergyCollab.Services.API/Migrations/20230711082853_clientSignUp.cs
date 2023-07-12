@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
@@ -17,7 +15,6 @@ namespace EnergyCollab.Services.API.Migrations
                 nullable: false,
                 defaultValue: false);
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {

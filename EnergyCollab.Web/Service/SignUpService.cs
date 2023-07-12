@@ -1,7 +1,6 @@
 ﻿using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
-
 namespace EnergyCollab.Web.Service
 {
     public class SignUpService : ISignUp
@@ -11,9 +10,6 @@ namespace EnergyCollab.Web.Service
         {
             _baseService = baseService;
         }
-
-
-
         public async Task<ResponseDto?> CreateUserSignUp(SignUpDto signUpDto)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -23,7 +19,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/SignUp"
             });
         }
-
         public async Task<ResponseDto?> UserLogin(LoginDto userLogin)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -33,7 +28,6 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/SignUp/login"
             });
         }
-
         public async Task<ResponseDto?> CreateClientAccount(ClientSignUpDto clientDto)
         {
             return await _baseService.SendAsync(new RequestDto()
@@ -43,7 +37,5 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/client/ClientSignUp"
             });
         }
-        
-
     }
 }

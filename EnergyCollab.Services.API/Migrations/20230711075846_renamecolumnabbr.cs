@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
@@ -13,18 +11,15 @@ namespace EnergyCollab.Services.API.Migrations
             migrationBuilder.DropColumn(
                 name: "IndustryExperience",
                 table: "Vacancies");
-
             //migrationBuilder.AddColumn<int>(
             //    name: "experienceId",
             //    table: "Vacancies",
             //    type: "int",
             //    nullable: true);
-
             migrationBuilder.RenameColumn(
                 name: "Abbrivation",
                 table: "Countries",
                 newName: "CountryCode");
-
             //migrationBuilder.CreateTable(
             //    name: "Experiences",
             //    columns: table => new
@@ -37,12 +32,10 @@ namespace EnergyCollab.Services.API.Migrations
             //    {
             //        table.PrimaryKey("PK_Experiences", x => x.Id);
             //    });
-
             //migrationBuilder.CreateIndex(
             //    name: "IX_Vacancies_experienceId",
             //    table: "Vacancies",
             //    column: "experienceId");
-
             //migrationBuilder.AddForeignKey(
             //    name: "FK_Vacancies_Experiences_experienceId",
             //    table: "Vacancies",
@@ -50,29 +43,23 @@ namespace EnergyCollab.Services.API.Migrations
             //    principalTable: "Experiences",
             //    principalColumn: "Id");
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Vacancies_Experiences_experienceId",
                 table: "Vacancies");
-
             migrationBuilder.DropTable(
                 name: "Experiences");
-
             migrationBuilder.DropIndex(
                 name: "IX_Vacancies_experienceId",
                 table: "Vacancies");
-
             migrationBuilder.DropColumn(
                 name: "experienceId",
                 table: "Vacancies");
-
             migrationBuilder.DropColumn(
                 name: "CountryCode",
                 table: "Countries");
-
             migrationBuilder.AddColumn<int>(
                 name: "IndustryExperience",
                 table: "Vacancies",

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Web.Models
 {
     public class ClientSignUpDto

@@ -2,26 +2,19 @@ using EnergyCollab.Web.Service;
 using EnergyCollab.Web.Service.IService;
 using EnergyCollab.Web.Utility;
 using Microsoft.AspNetCore.Authentication.Cookies;
-
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
-
 builder.Services.AddHttpClient<ICandidateProfileService, CandidateService>();
 builder.Services.AddHttpClient<ISignUp, SignUpService>();
-
-
 SD.CandidateAPIBase = builder.Configuration["ServiceUrls:CandidateAPI"];
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
-
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICandidateProfileService, CandidateService>();
 builder.Services.AddScoped<ISignUp, SignUpService>();
 builder.Services.AddScoped<IJobSearch, JobSearchService>();
-
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -29,11 +22,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Auth/Login";
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
-
-
-
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -41,17 +30,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();
-

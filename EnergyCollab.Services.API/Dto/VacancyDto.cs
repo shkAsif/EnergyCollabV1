@@ -1,5 +1,4 @@
 ﻿using EnergyCollab.Services.API.Models;
-
 namespace EnergyCollab.Services.API.Dto
 {
     public class VacancyDto
@@ -14,7 +13,5 @@ namespace EnergyCollab.Services.API.Dto
         public string City { get; set; } = string.Empty;
         public string CountryCode { get; set; } = string.Empty;
         public string Experience { get; set; }
-
-
     }
 }

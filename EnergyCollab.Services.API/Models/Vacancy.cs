@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
-
 namespace EnergyCollab.Services.API.Models
 {
     public class Vacancy
@@ -22,7 +21,6 @@ namespace EnergyCollab.Services.API.Models
         public string ExperienceSummary { get; set; }
         public Category EmpCategory { get; set; }
         public string SubCategory { get; set; } = string.Empty;
-
         //Country
         public Country country { get; set; }
         public int? countryId { get; set; }
@@ -32,35 +30,27 @@ namespace EnergyCollab.Services.API.Models
         //Experience
         public Experience experience { get; set; }
         public int? experienceId { get; set; }
-
         //Salary
         //ExperienceCategory
-
     }
-
     public partial class VacancyConfiguration : IEntityTypeConfiguration<Vacancy>
     {
-
         public void Configure(EntityTypeBuilder<Vacancy> modelBuilder)
         {
             modelBuilder.HasIndex(e => e.Id);
-
             //Country
             modelBuilder.HasOne(pt => pt.country)
                 .WithMany(t => t.vacancies)
                 .HasForeignKey(p => p.countryId);
-
             //Organization
             modelBuilder.HasOne(pt => pt.organization)
                 .WithMany(t => t.Vacancies)
                 .HasForeignKey(p => p.organizationId);
-
             // Experience
             modelBuilder.HasOne(pt => pt.experience)
                .WithMany(t => t.Vacancies)
                .HasForeignKey(p => p.experienceId);
         }
-
     }
     //Todo Move to Constanc.cs file
     public enum Category

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace EnergyCollab.Web.Models
 {
     public class SignUpDto
@@ -10,8 +9,6 @@ namespace EnergyCollab.Web.Models
         public string? LastName { get; set; }
         [Required]
         public string Password { get; set; }
-
         public string? ConfirmPassword { get; set; }
-
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Build.Graph;
-
 namespace EnergyCollab.Web.Models
 {
     public class QuickJobSearch

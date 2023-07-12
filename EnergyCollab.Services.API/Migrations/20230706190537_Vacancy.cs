@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
@@ -23,7 +21,6 @@ namespace EnergyCollab.Services.API.Migrations
                 {
                     table.PrimaryKey("PK_Countries", x => x.Id);
                 });
-
             migrationBuilder.CreateTable(
                 name: "Vacancies",
                 columns: table => new
@@ -56,19 +53,16 @@ namespace EnergyCollab.Services.API.Migrations
                         principalTable: "Countries",
                         principalColumn: "Id");
                 });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Vacancies_countryId",
                 table: "Vacancies",
                 column: "countryId");
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Vacancies");
-
             migrationBuilder.DropTable(
                 name: "Countries");
         }

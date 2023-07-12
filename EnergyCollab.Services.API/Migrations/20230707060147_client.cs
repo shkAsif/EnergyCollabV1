@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
-
 namespace EnergyCollab.Services.API.Migrations
 {
     /// <inheritdoc />
@@ -32,7 +30,6 @@ namespace EnergyCollab.Services.API.Migrations
                     table.PrimaryKey("PK_ClientSignups", x => x.Id);
                 });
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {

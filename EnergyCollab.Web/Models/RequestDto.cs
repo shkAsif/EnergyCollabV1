@@ -1,5 +1,4 @@
 ﻿using static EnergyCollab.Web.Utility.SD;
-
 namespace EnergyCollab.Web.Models
 {
     public class RequestDto
@@ -8,7 +7,6 @@ namespace EnergyCollab.Web.Models
         public string Url { get; set; }
         public object Data { get; set; }
         public string AccessToken { get; set; }
-
         public ContentType ContentType { get; set; } = ContentType.Json;
     }
 }

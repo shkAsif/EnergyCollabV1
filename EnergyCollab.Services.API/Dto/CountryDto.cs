@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace EnergyCollab.Services.API.Dto
 {
     public class CountryDto

@@ -1,7 +1,6 @@
 ﻿using EnergyCollab.Web.Models;
 using EnergyCollab.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
-
 namespace EnergyCollab.Web.Controllers
 {
     public class SignUpController : Controller
@@ -11,21 +10,15 @@ namespace EnergyCollab.Web.Controllers
         {
             _signUpService = signUpService;
         }
-
         [HttpGet]
         public ActionResult CreateSignUp()
         {
             return View();
         }
-
-
-
         [HttpPost]
         public async Task<IActionResult> CreateSignUp(SignUpDto signUpDto)
         {
-
             ResponseDto? response = await _signUpService.CreateUserSignUp(signUpDto);
-
             if (response != null && response.IsSuccess)
             {
                 var result = response.Result;
@@ -34,24 +27,18 @@ namespace EnergyCollab.Web.Controllers
             {
                 TempData["error"] = response?.Message;
             }
-
             return View();
         }
-
         public ActionResult Login()
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto UserLogin)
         {
-
             ResponseDto? response = await _signUpService.UserLogin(UserLogin);
-
             if (response != null && response.IsSuccess)
             {
-
                 var result = response.Result;
                 if (UserLogin.EmailId == "admin@gmail.com")
                 {
@@ -63,7 +50,6 @@ namespace EnergyCollab.Web.Controllers
             {
                 TempData["error"] = response?.Message;
             }
-
             return View();
         }
     }

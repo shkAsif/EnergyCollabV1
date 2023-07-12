@@ -7,13 +7,17 @@ namespace EnergyCollab.Web.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        [DisplayName("Company Name")]
         public string NameOfCompany { get; set; }
         public string Plan { get; set; }
+        [DisplayName("First Name")]
         public string? FirstName { get; set; }
+        [DisplayName("Last Name")]
         public string? LastName { get; set; }
         [Required]
         [PasswordPropertyText]  
         public string Password { get; set; }
+        [DisplayName("Confirm Password")]
         public string? ConfirmPassword { get; set; }
         public DateTime CreatedDated { get; set; } = DateTime.Now;
         public bool IsActive { get; } = true;

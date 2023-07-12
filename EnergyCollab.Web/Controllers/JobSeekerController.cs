@@ -56,42 +56,42 @@ namespace EnergyCollab.Web.Controllers
             return PartialView("~/Views/Shared/Vacancies.cshtml", vacancies);
         }
         [HttpGet]
-        public async Task<IActionResult> CompleteSearchVacancies(string country,
-            string IndustryEnpeience,
-            string EmploymentCategory,
-            string Education,
-            string SalaryAmount,
-            string SalaryCurrency,
-            string ExperienceCategory,
-            string OrderBy)
+
+        public async Task<IActionResult> CompleteSearchVacancies()
         {
-            var a = country;
-            if (!String.IsNullOrEmpty(country))
+            
+            // var a = completeSearch.CountryCode;
+            return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
+
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CompleteSearchVacancies([FromBody] CompleteSearchVacancyDto completeSearch)
+        {
+
+            var a = completeSearch.CountryCode;
+            //return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
+
+            ResponseDto? response = await _jobSearchService.CompleteJobSearch(completeSearch);
+           var vacancies = JsonConvert.DeserializeObject<List<VacancyDto>>(Convert.ToString(response.Result));
+            ViewData["vacancies"] = vacancies;
+            //ResponseDto? JobResult = await _jobSearchService.SearchJob();
+            if (response != null && response.IsSuccess)
             {
-                ResponseDto? response = await _jobSearchService.Country();
-                ResponseDto? JobResult = await _jobSearchService.SearchJob();
-                if (response != null && response.IsSuccess)
-                {
-                    List<CountryDto> countries = JsonConvert.DeserializeObject<List<CountryDto>>(Convert.ToString(response.Result));
-                    List<VacancyDto> vacancies = JsonConvert.DeserializeObject<List<VacancyDto>>(Convert.ToString(JobResult.Result));
-                    var countrySelectList = countries.Select(c => new SelectListItem
-                    {
-                        Value = c.City.ToString(),
-                        Text = c.Name
-                    }).ToList();
-                    ViewData["Countries"] = countrySelectList;
-                    ViewData["vacancies"] = vacancies;
-                }
-                else
-                {
-                    TempData["error"] = response?.Message;
-                }
-                return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
+
             }
             else
             {
-                return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
+                TempData["error"] = response?.Message;
             }
+            return PartialView("~/Views/Shared/_PartialCompleteSearch.cshtml");
+
+            return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
         }
     }
 }
+
+
+
+

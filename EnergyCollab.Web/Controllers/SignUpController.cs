@@ -40,7 +40,7 @@ namespace EnergyCollab.Web.Controllers
             if (response != null && response.IsSuccess)
             {
                 var result = response.Result;
-                if (UserLogin.EmailId == "admin@gmail.com")
+                if (UserLogin.EmailId.Contains("client"))
                 {
                     return View("~/Views/Client/ClientDashboard.cshtml");
                 }

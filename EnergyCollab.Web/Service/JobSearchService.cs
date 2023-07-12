@@ -40,7 +40,17 @@ namespace EnergyCollab.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.CandidateAPIBase + "/api/vacancy/"
+                Url = SD.CandidateAPIBase + "/api/vacancy/detailsearch"
+            });
+        }
+
+        public async Task<ResponseDto?> CompleteJobSearch(CompleteSearchVacancyDto completeSearch)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                Data = completeSearch,
+                ApiType = SD.ApiType.POST,
+                Url = SD.CandidateAPIBase + "/api/vacancy/detailsearch"
             });
         }
     }

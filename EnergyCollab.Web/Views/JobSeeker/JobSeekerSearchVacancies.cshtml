@@ -1,4 +1,7 @@
-﻿<section id="content" class="main container">
+﻿@{
+    var vacancies = ViewData["vacancies"];
+}
+<section id="content" class="main container">
     <div class="durandal-wrapper" data-view="views/home" data-active-view="true">
         <section id="section-home" class="page-section">
             <div class="row" data-bind="if: state.hasPendingRequest()"></div>
@@ -271,11 +274,11 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4  col-sm-12  col-xs-12 ">
-                                            <label for="inputIndustryExperienceCodeValue">
+                                            <label for="inputIndustryExperience">
                                                 Industry
                                                 Experience:
                                             </label>
-                                            <select id="inputIndustryExperienceCodeValue" class="form-control" name="IndustryEnpeience">
+                                            <select id="inputIndustryExperience" class="form-control" name="IndustryEnpeience">
                                                 <option value="azeroToFourYears">0-4 Years</option>
                                                 <option value="bfiveToNineYears">5-9 Years</option>
                                                 <option value="ctenToFourteenYears">10-14 Years</option>
@@ -285,19 +288,20 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4  col-sm-12  col-xs-12 ">
-                                            <label for="inputEmploymentTypeCodeValue">
+                                            <label for="inputEmploymentEmploymentCategory">
                                                 Employment
                                                 Category:
                                             </label>
-                                            <select id="inputEmploymentTypeCodeValue" class="form-control" name="EmploymentCategory">                                                <option value="contract">Contract</option>
+                                            <select id="inputEmploymentEmploymentCategory" class="form-control" name="EmploymentCategory">
+                                                <option value="contract">Contract</option>
                                                 <option value="fullTime">Full Time</option>
                                                 <option value="partTime">Part Time</option>
                                                 <option value="">All</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4  col-sm-12  col-xs-12 ">
-                                            <label for="inputEducationCodeValue">Education:</label>
-                                            <select id="inputEducationCodeValue" class="form-control" name="Education">
+                                            <label for="inputEducation">Education:</label>
+                                            <select id="inputEducation" class="form-control" name="Education">
                                                 <option value="aHighSchoolSecondary">High School/Secondary</option>
                                                 <option value="bSomeCollege">Some College</option>
                                                 <option value="cTechVocational">Tech/Vocational</option>
@@ -315,8 +319,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4  col-sm-12  col-xs-12">
-                                            <label for="inputSalarySoughtAmount"
-                                                   data-bind="text: $root.loc.stringSalarySoughtAmountColon">
+                                            <label for="inputSalarySoughtAmount">
                                                 Salary
                                                 (Amount):
                                             </label>
@@ -378,11 +381,11 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4  col-sm-12  col-xs-12">
-                                            <label for="inputExperienceDisciplineSecondLevelCodeValue">
+                                            <label for="inputExperience">
                                                 Summary
                                                 of Experience Category:
                                             </label>
-                                            <select id="inputExperienceDisciplineSecondLevelCodeValue" class="form-control" name="ExperienceCategory">
+                                            <select id="inputExperience" class="form-control" name="ExperienceCategory">
                                                 <option value="">All</option>
                                                 <option value="CoalSeamGas">Coal Seam Gas</option>
                                                 <option value="drillingRig">Drilling/Rig</option>
@@ -424,7 +427,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-12  col-sm-12  col-xs-12">
-                                            <button id="SearchVacancyCandidateId" class="btn btn-success btn-block mt-4" type="submit">
+                                            <button id="SearchVacancyCandidateId" class="btn btn-success btn-block mt-4" type="button" onclick="CompleteSearch()">
                                                 <span > SearchVaccancy</span>
                                                 <i  class="fa fa-search"></i>
                                                 <i class="fa fa-circle-o-notch fa-spin "></i>
@@ -535,7 +538,7 @@
                                     </form>
                                 </div>
                                 <div class="form-group col-md-12  col-sm-12  col-xs-12 ">
-                                    <div data-bind="messageBox: messageDetail" style="display: none;"></div>
+                                    <div data-bind="messageBox: messageDetail"></div>
                                     <div class="animated fadeIn x-slow-animated"
                                          data-bind="compose: 'homeUserVacancySearchResult.html'">
                                         <div class="durandal-wrapper" data-view="views/homeUserVacancySearchResult" data-active-view="true">
@@ -550,7 +553,9 @@
             </div>
         </section>
     </div>
-   @* <div class="PartialView">
-        @await Html.PartialAsync("Vacancies.cshtml", vacancies);
-    </div>*@
+
+    <div class="PartialView">
+        @await Html.PartialAsync("~/Views/Shared/_PartialCompleteSearch.cshtml",vacancies)
+    </div>
+  
 </section>

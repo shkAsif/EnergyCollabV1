@@ -66,7 +66,7 @@ namespace EnergyCollab.Services.API.Controllers
         }
         [Route("detailsearch")]
         [HttpPost]
-        public async Task<IActionResult> DetailSearchVacany(DetailSearchViewModel detailSearchViewModel)
+        public async Task<IActionResult> DetailSearchVacany([FromBody]DetailSearchViewModel detailSearchViewModel)
         {
             try
             {

@@ -23,3 +23,30 @@ function search() {
             }
         });
 }
+function CompleteSearch() {
+    var completeSearch = {
+        CountryCode: $("#inputCountry").val(),
+        IndustryExperience: $("#inputIndustryExperience").val(),
+        EmploymentCategory: $("#inputEmploymentEmploymentCategory").val(),
+        Education: $("#inputEducation").val(),
+        SalaryAmount: $("#inputSalarySoughtAmount").val(),
+        SalaryCurrency: $("#inputSalarySoughtCurrency").val(),
+        SummaryOfExperienceCategory: $("#inputExperience").val(),
+        OrderBy: $('#inputOrderBy').val(),
+        SearchPhrase: $('#inputSearchPhrase').val()
+    };
+    debugger;
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/JobSeeker/CompleteSearchVacancies',
+        type: 'POST',
+        data: JSON.stringify(completeSearch),
+        contentType: 'application/json',
+        success: function (result) {
+            $('#jobResults').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+}

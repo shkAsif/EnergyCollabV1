@@ -50,3 +50,24 @@ function CompleteSearch() {
         }
     });
 }
+function getComapnies() {
+    
+    debugger;
+
+
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/Client/ClientTabs',
+        type: 'GET',
+        data: {
+            tabId: "1",            
+        },
+        contentType: 'application/json',
+        success: function (result) {
+            $('#partialListView').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+}

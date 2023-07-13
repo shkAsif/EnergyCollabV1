@@ -42,6 +42,7 @@ namespace EnergyCollab.Web.Controllers
                 var result = response.Result;
                 if (UserLogin.EmailId.Contains("client"))
                 {
+                    //return RedirectToAction("CreateSignUp", "Signup");
                     return View("~/Views/Client/ClientDashboard.cshtml");
                 }
                 return View("~/Views/SignUp/UserLoggedIn.cshtml");

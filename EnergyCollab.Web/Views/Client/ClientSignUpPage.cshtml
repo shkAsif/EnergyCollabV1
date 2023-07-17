@@ -2,51 +2,93 @@
 @{
     ViewData["clientsign"] = "ClientSignUpPage";
 }
-<h1>ClientSignUpPage</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="ClientSignUpPage">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+
+<section id="content" class="main container">
+    <div id="logo-container" class="logo-container col-md-2">
+        <img class="logo-image" data-bind="attr: { src: config.imageCdn + 'logo/logo.svg' }"
+             src="https://cdn.oildiversity.com/app/images/logo/logo.svg">
+    </div>
+
+    <form id="signup" class="form-signin" asp-action="ClientSignUpPage">
+        <div class="control-group">
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="Email" type="text" class="form-control" id="inputEmail"
+                       placeholder="Enter Email address">
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="NameOfCompany" class="control-label"></label>
-                <input asp-for="NameOfCompany" class="form-control" />
+
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="NameOfCompany" type="text" class="form-control" id="inputCompanyName"
+                       placeholder="Name of company">
                 <span asp-validation-for="NameOfCompany" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
+
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="FirstName" type="text" class="form-control" id="inputFirstName"
+                       placeholder="First name">
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
+
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="LastName" type="text" class="form-control" id="inputLastName"
+                       placeholder="Last name">
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="Password" type="password" class="form-control" id="inputPassword"
+                       placeholder="Password">
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+
+            <div class="form-group col-md-4 form-item">
+                <input asp-for="ConfirmPassword" type="password" class="form-control" id="inputConfirmPassword"
+                       placeholder="Confirm password">
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create Account"  class="btn btn-primary" />
+        </div>
+        <div class="privacy-policy col-md-4">
+            <div class="policy-chkbox">
+                <input type="checkbox" name="subscribe-for-updates">
+                <span data-bind="text: $root.loc.stringSignUpForNewsLetter">
+                    I agree to receive news and updates
+                    from the Energy Collab.
+                </span>
             </div>
-        </form>
-    </div>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+            <div class="policy-chkbox">
+                <input type="checkbox" name="terms-and-conditions">
+                <span data-bind="html: $root.loc.htmlSignupAgreement">
+                    I agree with the
+                    <a href="//www.theenergycollab.com/#!/show/?key=terms-of-service" target="_blank">
+                        Terms of
+                        Service
+                    </a> and the <a href="//www.theenergycollab.com/#!/show/?key=privacy-policy"
+                                    target="_blank">Privacy Policy.</a>
+                </span>
+            </div>
+        </div>
+        <div class="control-group form-group">
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-md col-md-4 create-account-btn">
+                    <i class="fa fa-circle-o-notch fa-spin" style="display: none;"></i>
+                    <span style="display: none;">Creating account...</span>
+                    <span>Create Account</span>
+                </button>
+            </div>
+        </div>
+        <div class="back-btn col-md-4">
+            <div class="row justify-content-end">
+                <div class="btn btn-md col-md-2">
+                    <a href="">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

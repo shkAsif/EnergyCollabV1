@@ -43,7 +43,7 @@ function CompleteSearch() {
         data: JSON.stringify(completeSearch),
         contentType: 'application/json',
         success: function (result) {
-            $('#jobResults').html(result);
+                $('#completeSearchVacancies').html(result);
         },
         error: function (xhr, txtStatus, errorThrown) {
             alert('An error occurred while updating the partial view.');
@@ -70,4 +70,27 @@ function getComapnies() {
             alert('An error occurred while updating the partial view.');
         }
     });
+
+
 }
+function getUserGroups() {
+    debugger;
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/Client/UserGroupTab',
+        type: 'GET',
+        data: {
+            tabId: "2",
+        },
+        contentType: 'application/json',
+        success: function (result) {
+            $('#partialListView').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+
+
+}
+

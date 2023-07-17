@@ -1,4 +1,12 @@
-﻿@model IEnumerable<EnergyCollab.Web.Models.CompleteSearchVacancyDto>
+﻿@*@model IEnumerable<EnergyCollab.Web.Models.VacancyDto>*@
+@*partial view namespace*@
+@using EnergyCollab.Web.Models
+@model VacancyDto
+@{
+    ViewData["Title"] = "Index";
+    List<VacancyDto> data = ViewData["vacancies"] as List<VacancyDto>;
+}
+
 <style>
     .container {
         padding: 2rem;
@@ -40,11 +48,10 @@
 
 
 @{
-    if (Model != null)
+    if (data != null)
     {
-        var data = ViewData["vacancies"];
-        @foreach (var item in Model)
-        {
+        @foreach (var item in data)
+        {   
             <div class="container">
                 <div class="row jobs-list">
                     <div class="row text-left ">
@@ -55,8 +62,8 @@
                         <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 ">
                             <div class="row">
                                 <span class="pull-right days-ago">3 days ago</span>
-                                <p class="small">@Html.DisplayFor(modelItem => item.CountryCode)</p>
-                                <h3>@Html.DisplayFor(modelItem => item.IndustryExperience)</h3>
+                                <p class="small">@Html.DisplayFor(modelItem => item.Country)</p>
+                                <h3>@Html.DisplayFor(modelItem => item.CompanyName)</h3>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">

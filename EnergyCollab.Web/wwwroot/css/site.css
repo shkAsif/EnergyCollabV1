@@ -1,8 +1,95 @@
 html {
   font-size: 14px;
 }
+/*Login*/
+.head-btm {
+    display: none;
+}
+
+.bottom-btm {
+    display: none;
+}
+
+section.main {
+    margin-top: 100px !important;
+}
+
+.logo-image {
+    height: 8rem;
+    width: 100%;
+}
+
+.intigrate-login-facbook {
+    border: 1px solid #3b5998;
+    border-radius: 4px;
+    color: #3b5998;
+}
+
+.intigrate-login-google {
+    border: 1px solid #dd4b39;
+    border-radius: 4px;
+    color: #dd4b39;
+}
+
+    .intigrate-login-facbook span::before, .intigrate-login-google span::before {
+        content: "|";
+        color: gray;
+    }
+
+.sign-in-btn {
+    margin: 0 auto;
+}
+/*Login End*/
+/*SignUp*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head-btm {
+    display: none;
+}
+
+.bottom-btm {
+    display: none;
+}
+
+.section.main {
+    margin-top: 100px !important;
+}
+
+.logo-container,
+.form-item,
+.privacy-policy,
+.back-btn {
+    margin: 0.30rem auto;
+}
+
+.privacy-policy {
+    font-size: 10pt;
+}
+
+    .privacy-policy a,
+    .back-btn a {
+        color: #80bd01;
+    }
+
+.create-account-btn {
+    background-color: #80bd01;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+    .create-account-btn:hover {
+        color: #80bd01;
+        background-color: #ffffff;
+        border: 1px solid #80bd01;
+    }
+
+/*SignUP End*/
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }

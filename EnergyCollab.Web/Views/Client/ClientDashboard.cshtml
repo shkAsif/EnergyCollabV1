@@ -242,11 +242,12 @@
 
                                 <div id="partialListView" class="col-md-12">
                                     @{
-                                        if (resultList != null)
+                                        if (resultList != null){
                                             @await Html.PartialAsync("~/Views/Shared/_ClientDetailTabListView.cshtml", resultList)
-                                        @await Html.PartialAsync("~/Views/Shared/_PartialUserGroups.cshtml", resultList)
-                                        @await Html.PartialAsync("~/Views/Shared/_PartialSecurityRights.cshtml", resultList)
-                                        @await Html.PartialAsync("~/Views/Shared/_PartialTemplates.cshtml", resultList)
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialUserGroups.cshtml", resultList)
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialSecurityRights.cshtml", resultList)
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialTemplates.cshtml", resultList)
+                                        }
                                     }
                                 </div>
 

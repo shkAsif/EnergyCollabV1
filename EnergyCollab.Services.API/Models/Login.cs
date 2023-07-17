@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using EnergyCollab.Web.Models;
+
 namespace EnergyCollab.Services.API.Models
 {
     public class Login
@@ -11,5 +13,6 @@ namespace EnergyCollab.Services.API.Models
         [Required]
         [PasswordPropertyText]
         public string Password { get; set; }
+        public List<SignUp> Users { get; set; }
     }
 }

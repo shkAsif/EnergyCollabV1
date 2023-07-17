@@ -2,31 +2,57 @@
 @{
     ViewData["Title"] = "Login";
 }
-<h1>Login</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="EmailId" class="control-label"></label>
-                <input asp-for="EmailId" class="form-control" />
-                <span asp-validation-for="EmailId" class="text-danger"></span>
+
+<section id="content" class="main container">
+    <div id="logo-container">
+        <img class="logo-image animated fadeInDown" src="https://cdn.oildiversity.com/app/images/logo/logo.svg">
+
+        <form class="form-signin" id="login" data-bind="visible: !isConfirmingSignin()" asp-action="Login">
+            <h4 data-bind="text: config.systemType, visible: config.systemType!=='Production'"
+                style="display: none;">
+                Production
+            </h4>
+            <div class="control-group">
+                <div data-bind="messageBox: messageDetail" style="display: none;"></div>
+                <div class="form-group first-input col-md-4 m-auto mt-2">
+                    <input asp-for="EmailId" class="form-control input-lg" type="text" name="EmailId" placeholder="Email address" />
+                    <span asp-validation-for="EmailId" class="text-danger"></span>
+                </div>
+                <div class="form-group last-input col-md-4 m-auto mt-2">
+                    <input asp-for="Password" class="form-control input-lg" type="password" name="password" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="sign-in-btn row justify-content-center">
+                    <button type="submit" class="btn btn-success col-md-4 m-2" id="signin">
+                        <i class="fa fa-circle-o-notch fa-spin" style="display: none;"></i>
+                        <span style="display: none;">Signing in...</span>
+                        <span>Sign in</span>
+                    </button>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group mt-4">
-                <input type="submit" value="Login In" class="btn btn-primary" />
+            <div class="control-group row justify-content-center">
+                <div class="col-md-2 m-2 intigrate-login-facbook">
+                    <a class="social-btn-padder btn btn-social btn-facebook btn-sm pull-left" style="width: 100%"
+                       href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjg5NDk1Mzk4LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D">
+                        <i class="fa fa-facebook"></i>
+                        <span>Sign in with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="col-md-2 m-2 intigrate-login-google">
+                    <a class="social-btn-padder btn btn-social btn-google btn-sm pull-right" style="width: 100%"
+                       href="https://accounts.google.com/v3/signin/identifier?dsh=S-200444886%3A1689495526910138&flowEntry=ServiceLogin&flowName=GlifWebSignIn&ifkv=AeDOFXi3qF9hMBRdOuyc63NfqzDGn8z5HETtA1uXguCkzQI46u-oFXKjBB_mBLPqAWIYKeqC-m2QOw">
+                        <i class="fa fa-google"></i>
+                        <span>Sign in with Google</span>
+                    </a>
+                </div>
             </div>
         </form>
     </div>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</section>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

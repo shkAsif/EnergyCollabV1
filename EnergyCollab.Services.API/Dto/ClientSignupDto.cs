@@ -5,7 +5,7 @@ namespace EnergyCollab.Services.API.Dto
     public class ClientSignupDto
     {
         public string Email { get; set; }
-        public string NameOfCompany { get; set; }
+        public string NameOfCompany { get; set; } = string.Empty;
         public string Plan { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

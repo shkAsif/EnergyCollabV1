@@ -7,8 +7,8 @@ namespace EnergyCollab.Services.API.Models
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }
-        [DisplayName("Name Of Company")]
-        public string NameOfCompany { get; set; }
+        //[DisplayName("Name Of Company")]
+        //public string NameOfCompany { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         [Required]

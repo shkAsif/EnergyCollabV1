@@ -4,6 +4,8 @@ namespace EnergyCollab.Services.API.Dto
 {
     public class LoginDto
     {
+        
+        
         [Required]
         [EmailAddress]
         public string EmailId { get; set; }

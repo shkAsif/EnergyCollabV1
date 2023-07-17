@@ -15,17 +15,22 @@ using System.Threading.Tasks;
 namespace EnergyCollab.API
 {
     public class MappingConfig : Profile
-    {        
+    {
         public MappingConfig()
         {
             CreateMap<CandidateProfileDto, CandidateProfile>();
             CreateMap<CandidateProfile, CandidateProfileDto>();
             CreateMap<SignUpDto, SignUp>().ReverseMap();
             CreateMap<LoginDto, Login>().ReverseMap();
+
+
+
             CreateMap<CountryDto, Country>()
             .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.CountryCode))
             .ReverseMap();
+
             CreateMap<ClientSignup, ClientSignupDto>().ReverseMap();
+
             CreateMap<Vacancy, VacancyDto>()
            .ForMember(i => i.JobTitle, opt => opt.MapFrom(i => i.JobTitle))
            .ForMember(i => i.CompanyName, opt => opt.MapFrom(i => i.organization.Name))
@@ -39,6 +44,18 @@ namespace EnergyCollab.API
            .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.country.CountryCode))
            .ForMember(i => i.Experience, opt => opt.MapFrom(i => i.experience.Range))
            ;
+
+            CreateMap<Organization, OrgSummaryDto>()
+             .ForMember(org => org.OrgId, opt => opt.MapFrom(u => u.Id))
+             .ForMember(org => org.OrgName, opt => opt.MapFrom(u => u.Name))
+             .ForMember(org => org.OrgContactPerson, opt => opt.MapFrom(u => u.OrgDetails.PrimaryContact))
+             .ForMember(org => org.OrgEmail, opt => opt.MapFrom(u => u.OrgDetails.Email))
+            ;
+
+            CreateMap<OrgDetail,OrgDetailDto>()
+                .ForMember(org => org.OrgSummary, opt => opt.MapFrom(u => u.organization))
+                .ForMember(org => org.Id, opt => opt.MapFrom(u => u.Id))
+                .ReverseMap();            
         }
     }
 }

@@ -1,15 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Views\**" />
     <Content Remove="Views\**" />
     <EmbeddedResource Remove="Views\**" />
     <None Remove="Views\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20230704162419_inial.cs" />
+    <Compile Remove="Migrations\20230704162419_inial.Designer.cs" />
+    <Compile Remove="Migrations\20230704170400_signUp.cs" />
+    <Compile Remove="Migrations\20230704170400_signUp.Designer.cs" />
+    <Compile Remove="Migrations\20230706104612_login.cs" />
+    <Compile Remove="Migrations\20230706104612_login.Designer.cs" />
+    <Compile Remove="Migrations\20230706190537_Vacancy.cs" />
+    <Compile Remove="Migrations\20230706190537_Vacancy.Designer.cs" />
+    <Compile Remove="Migrations\20230706194829_addsignup.cs" />
+    <Compile Remove="Migrations\20230706194829_addsignup.Designer.cs" />
+    <Compile Remove="Migrations\20230707060147_client.cs" />
+    <Compile Remove="Migrations\20230707060147_client.Designer.cs" />
+    <Compile Remove="Migrations\20230707141804_addOrgandVacancyRelation.cs" />
+    <Compile Remove="Migrations\20230707141804_addOrgandVacancyRelation.Designer.cs" />
+    <Compile Remove="Migrations\20230711075846_renamecolumnabbr.cs" />
+    <Compile Remove="Migrations\20230711075846_renamecolumnabbr.Designer.cs" />
+    <Compile Remove="Migrations\20230711082853_clientSignUp.cs" />
+    <Compile Remove="Migrations\20230711082853_clientSignUp.Designer.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="12.0.1" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
@@ -26,4 +50,5 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.7" />
 	</ItemGroup>
+
 </Project>

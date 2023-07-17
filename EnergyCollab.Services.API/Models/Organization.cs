@@ -17,15 +17,25 @@ namespace EnergyCollab.Services.API.Models
         public DateTime Created { get; set; } = DateTime.Now;
         public  DateTime Updated { get; set; }= DateTime.Now;
         public ICollection<Vacancy> Vacancies { get; set; }
+        public OrgDetail OrgDetails { get; set; }       
+
         public partial class OrganizationConfiguration : IEntityTypeConfiguration<Organization>
         {
             public void Configure(EntityTypeBuilder<Organization> modelBuilder)
             {
                 modelBuilder.HasIndex(e => e.Id);
-                //Country
+
+                //Country One-To-Many
                 modelBuilder.HasOne(pt => pt.country)
-                    .WithMany(t => t.organizations)
-                    .HasForeignKey(p => p.countryId);
+                            .WithMany(t => t.organizations)
+                            .HasForeignKey(p => p.countryId);
+
+                //One-To-One
+                modelBuilder.HasOne(e => e.OrgDetails)
+                            .WithOne(e => e.organization)
+                            .HasForeignKey<OrgDetail>(e => e.organizationId)
+                            .IsRequired();
+
             }
         }
     }

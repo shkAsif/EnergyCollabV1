@@ -4,6 +4,7 @@ using EnergyCollab.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnergyCollab.Services.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230714142803_removeCompanyName")]
+    partial class removeCompanyName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,7 +149,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CandidateProfiles", (string)null);
+                    b.ToTable("CandidateProfiles");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.ClientSignup", b =>
@@ -188,7 +191,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClientSignups", (string)null);
+                    b.ToTable("ClientSignups");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Country", b =>
@@ -213,7 +216,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countries", (string)null);
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Experience", b =>
@@ -230,7 +233,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Experiences", (string)null);
+                    b.ToTable("Experiences");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Login", b =>
@@ -251,7 +254,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logins", (string)null);
+                    b.ToTable("Logins");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Organization", b =>
@@ -282,7 +285,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasIndex("countryId");
 
-                    b.ToTable("Organizations", (string)null);
+                    b.ToTable("Organizations");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Vacancy", b =>
@@ -360,7 +363,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasIndex("organizationId");
 
-                    b.ToTable("Vacancies", (string)null);
+                    b.ToTable("Vacancies");
                 });
 
             modelBuilder.Entity("EnergyCollab.Web.Models.SignUp", b =>
@@ -398,7 +401,7 @@ namespace EnergyCollab.Services.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SignUps", (string)null);
+                    b.ToTable("SignUps");
                 });
 
             modelBuilder.Entity("EnergyCollab.Services.API.Models.Organization", b =>

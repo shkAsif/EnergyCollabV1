@@ -90,14 +90,17 @@
 <body>
 
     @{
-        var resultList = ViewData["DetailTabView"];
+        var Companies = ViewData["Companies"];
+        var UserGroups = ViewData["UserGroupsView"];
+        var SecurityRights = ViewData["SecurityRights"];
+        var Templates = ViewData["Templates"];
+        var CandidateSubscribers = ViewData["CandidateSubscribers"];
     }
 
     <section id="content" class="main container"
              data-bind="router: { transition: 'entrance', cacheViews: false }, css: { 'loading-background' : state.isLoading}">
         <div class="durandal-wrapper" data-view="views/admin" data-active-view="true">
             <section class="page-section">
-
                 <div class="row">
                     <div class="col-md-3 col-xs-12 right-left-padding-remover">
 
@@ -112,7 +115,7 @@
                                 </p>
                             </li>
 
-                            <li class="list-group-item" onclick="getComapnies()">
+                            <li class="list-group-item" onclick="getUserGroups()">
 
                                 <span class="badge" data-bind="text: items().length">54</span>
 
@@ -122,7 +125,7 @@
                                 </p>
                             </li>
 
-                            <li class="list-group-item" onclick="getComapnies()">
+                            <li class="list-group-item" onclick="getSecurityRights()">
 
                                 <span class="badge" data-bind="text: items().length">53</span>
 
@@ -132,7 +135,7 @@
                                 </p>
                             </li>
 
-                            <li class="list-group-item" onclick="getComapnies()">
+                            <li class="list-group-item" onclick="getTemplates()">
 
                                 <span class="badge" data-bind="text: items().length">16</span>
 
@@ -142,9 +145,7 @@
                                 </p>
                             </li>
 
-                            <li class="list-group-item"
-                                data-bind="click: $parent.setSelectedView, css: {'list-group-item-active': $parent.selectedView().id == id}"
-                                href="#">
+                            <li class="list-group-item" onclick="getCandidateSubscribers()">
 
                                 <span class="badge" data-bind="text: items().length">559</span>
 
@@ -242,12 +243,27 @@
 
                                 <div id="partialListView" class="col-md-12">
                                     @{
-                                        if (resultList != null){
-                                            @await Html.PartialAsync("~/Views/Shared/_ClientDetailTabListView.cshtml", resultList)
-                                            @await Html.PartialAsync("~/Views/Shared/_PartialUserGroups.cshtml", resultList)
-                                            @await Html.PartialAsync("~/Views/Shared/_PartialSecurityRights.cshtml", resultList)
-                                            @await Html.PartialAsync("~/Views/Shared/_PartialTemplates.cshtml", resultList)
+                                        if (Companies != null)
+                                        {
+                                            @await Html.PartialAsync("~/Views/Shared/_ClientDetailTabListView.cshtml", Companies)
                                         }
+                                        else if (UserGroups != null)
+                                        {
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialUserGroups.cshtml", UserGroups)
+                                        }
+                                        else if (SecurityRights != null)
+                                        {
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialSecurityRights.cshtml", SecurityRights)
+                                        }
+                                        else if (Templates != null)
+                                        {
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialTemplates.cshtml", Templates)
+                                        }
+                                        else if (CandidateSubscribers != null)
+                                        {
+                                            @await Html.PartialAsync("~/Views/Shared/_PartialCandidteSubscriber.cshtml", CandidateSubscribers)
+                                        }
+                                        @await Html.PartialAsync("~/Views/Shared/_ClientDetailTabListView.cshtml", Companies)
                                     }
                                 </div>
 

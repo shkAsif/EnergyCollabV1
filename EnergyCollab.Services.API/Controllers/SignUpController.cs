@@ -45,6 +45,9 @@ namespace EnergyCollab.Services.API.Controllers
         {
             try
             {
+                //check if email already exists             
+
+                
                 SignUp obj =  _mapper.Map<SignUp>(signUpDto);
                 _db.SignUps.Add(obj);
                 _db.SaveChanges();
@@ -70,17 +73,11 @@ namespace EnergyCollab.Services.API.Controllers
         {
             try
             {
-                Login loginObj = _mapper.Map<Login>(loginDto);
-                //_db.Logins.Add(loginObj);
-                //_db.SaveChanges();
-                //_response.Result = _mapper.Map<LoginDto>(loginObj);
-
-
                 var users = await _db.SignUps
                    .AsNoTracking()
-                   .Where(x => x.Email.ToLower().Equals(loginObj.EmailId.ToLower())
-                           && x.Password.ToLower().Equals(loginObj.Password.ToLower()))
-                   .ToListAsync();
+                   .Where(x => x.Email.ToLower().Equals(loginDto.EmailId.ToLower())
+                           && x.Password.ToLower().Equals(loginDto.Password.ToLower()))
+                   .FirstOrDefaultAsync();
 
                 _response.Result = _mapper.Map<SignUpDto>(users);
                 return Ok(_response);

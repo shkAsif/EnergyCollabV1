@@ -3,7 +3,7 @@
 // Write your JavaScript code.
 function search() {
     var obj_data = {
-        Country:"",
+        Country: "",
         CountryCode: $('#CountryCode').val(),
         SearchPhrase: $('#inputSearchPhrase').val(),
         OrderBy: $('#inputOrderBy').val()
@@ -13,15 +13,15 @@ function search() {
     $.ajax({
         url: '/JobSeeker/FilterQuickJobSearch',
         type: 'POST',
-        data:JSON.stringify(obj_data),
+        data: JSON.stringify(obj_data),
         contentType: 'application/json',
-            success: function (result) {
-                $('#jobResults').html(result);
-            },
-            error: function (xhr,txtStatus,errorThrown) {
-                alert('An error occurred while updating the partial view.');
-            }
-        });
+        success: function (result) {
+            $('#jobResults').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
 }
 function CompleteSearch() {
     var completeSearch = {
@@ -43,7 +43,7 @@ function CompleteSearch() {
         data: JSON.stringify(completeSearch),
         contentType: 'application/json',
         success: function (result) {
-                $('#completeSearchVacancies').html(result);
+            $('#completeSearchVacancies').html(result);
         },
         error: function (xhr, txtStatus, errorThrown) {
             alert('An error occurred while updating the partial view.');
@@ -51,7 +51,7 @@ function CompleteSearch() {
     });
 }
 function getComapnies() {
-    
+
     debugger;
 
 
@@ -60,7 +60,7 @@ function getComapnies() {
         url: '/Client/ClientTabs',
         type: 'GET',
         data: {
-            tabId: "1",            
+            tabId: "1",
         },
         contentType: 'application/json',
         success: function (result) {
@@ -77,7 +77,7 @@ function getUserGroups() {
     debugger;
     var searchPhase = $('#inputSearchPhrase').val()
     $.ajax({
-        url: '/Client/UserGroupTab',
+        url: '/Client/ClientTabs',
         type: 'GET',
         data: {
             tabId: "2",
@@ -90,7 +90,62 @@ function getUserGroups() {
             alert('An error occurred while updating the partial view.');
         }
     });
-
-
 }
 
+function getSecurityRights() {
+    debugger;
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/Client/ClientTabs',
+        type: 'GET',
+        data: {
+            tabId: "3",
+        },
+        contentType: 'application/json',
+        success: function (result) {
+            $('#partialListView').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+}
+
+function getTemplates() {
+    debugger;
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/Client/ClientTabs',
+        type: 'GET',
+        data: {
+            tabId: "4",
+        },
+        contentType: 'application/json',
+        success: function (result) {
+            $('#partialListView').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+}
+function getCandidateSubscribers() {
+    debugger;
+    var searchPhase = $('#inputSearchPhrase').val()
+    $.ajax({
+        url: '/Client/ClientTabs',
+        type: 'GET',
+        data: {
+            tabId: "5",
+        },
+        contentType: 'application/json',
+        success: function (result) {
+
+            $('#partialListView').html(result);
+        },
+        error: function (xhr, txtStatus, errorThrown) {
+            var x = "";
+            alert('An error occurred while updating the partial view.');
+        }
+    });
+}

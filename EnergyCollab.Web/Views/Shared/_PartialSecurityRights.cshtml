@@ -20,7 +20,7 @@
             </div>*@
             <div class="row title-row">
                 <div class="pull-right">
-                    <button class="btn btn-success btn-sm" data-bind="click: newItem, visible: !isEditing()"><i class="fa fa-plus"></i></button>
+                    <button class="btn btn-success btn-sm"><i class="fa fa-plus"></i></button>
                 </div>
                 <div class="pull-left">
                     <h3 data-bind="text: $root.loc.stringUserGroups">Access Lists</h3>
@@ -38,7 +38,7 @@
                                 <div data-bind="compose: 'adminTileButtonPanel.html'">
                                     <div class="tile-button-panel" data-bind="if: $root.selectedItem() &amp;&amp; $data === $root.selectedItem()" data-view="views/adminTileButtonPanel" data-active-view="true" style="">
 
-                                        <div data-bind="visible : !$root.isDeleting()">
+                                        <div>
                                             <button class="btn btn-default btn-xs editCompany" data-bind="visible: $root.canEdit(),click: $root.editItem,$data="><i class="fa fa-pencil editCompany"></i></button>
                                             <button class="btn btn-danger btn-xs" data-bind="visible: $root.canDelete(), click: $root.deleteItem"><i class="fa fa-trash"></i></button>
                                         </div>

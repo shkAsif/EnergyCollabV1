@@ -22,7 +22,7 @@ namespace EnergyCollab.Web.Controllers
             if (response != null && response.IsSuccess)
             {
                 var result = response.Result;
-            }
+            }   
             else
             {
                 TempData["error"] = response?.Message;

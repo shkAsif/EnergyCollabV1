@@ -13,6 +13,5 @@ namespace EnergyCollab.Services.API.Models
         [Required]
         [PasswordPropertyText]
         public string Password { get; set; }
-        public List<SignUp> Users { get; set; }
     }
 }

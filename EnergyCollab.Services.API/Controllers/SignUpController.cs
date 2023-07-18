@@ -45,13 +45,16 @@ namespace EnergyCollab.Services.API.Controllers
         {
             try
             {
-                //check if email already exists             
 
-                
-                SignUp obj =  _mapper.Map<SignUp>(signUpDto);
-                _db.SignUps.Add(obj);
+                //if (!ModelState.IsValid)
+                //{
+                //    return BadRequest(ModelState);
+                //}
+
+                SignUp signUp = _mapper.Map<SignUp>(signUpDto);
+                _db.SignUps.Add(signUp);
                 _db.SaveChanges();
-                _response.Result = _mapper.Map<SignUpDto>(obj);
+                _response.Result = _mapper.Map<SignUpDto>(signUp);
 
                 return Ok(_response);
             }
@@ -61,10 +64,10 @@ namespace EnergyCollab.Services.API.Controllers
                 _response.Message = ex.Message;
                 return BadRequest(_response);
             }
-           
+
         }
 
-       
+
 
         [HttpPost]
         [Route("login")]
@@ -75,6 +78,7 @@ namespace EnergyCollab.Services.API.Controllers
             {
                 var users = await _db.SignUps
                    .AsNoTracking()
+                   .Include(x => x.CandidateProfile)
                    .Where(x => x.Email.ToLower().Equals(loginDto.EmailId.ToLower())
                            && x.Password.ToLower().Equals(loginDto.Password.ToLower()))
                    .FirstOrDefaultAsync();
@@ -86,9 +90,9 @@ namespace EnergyCollab.Services.API.Controllers
             {
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
-                return BadRequest( _response);
+                return BadRequest(_response);
             }
-           
+
         }
     }
 }

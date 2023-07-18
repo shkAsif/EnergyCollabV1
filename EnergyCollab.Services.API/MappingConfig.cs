@@ -17,19 +17,17 @@ namespace EnergyCollab.API
     public class MappingConfig : Profile
     {
         public MappingConfig()
-        {
-            CreateMap<CandidateProfileDto, CandidateProfile>();
-            CreateMap<CandidateProfile, CandidateProfileDto>();
-            CreateMap<SignUpDto, SignUp>().ReverseMap();
-            CreateMap<LoginDto, Login>().ReverseMap();
+        {          
 
+            CreateMap<CandidateProfileDto,CandidateProfile>().ReverseMap();
+            
+            CreateMap<LoginDto, Login>().ReverseMap();
+            CreateMap<ClientSignupDto, ClientSignup>().ReverseMap();
 
 
             CreateMap<CountryDto, Country>()
             .ForMember(i => i.CountryCode, opt => opt.MapFrom(i => i.CountryCode))
-            .ReverseMap();
-
-            CreateMap<ClientSignup, ClientSignupDto>().ReverseMap();
+            .ReverseMap();            
 
             CreateMap<Vacancy, VacancyDto>()
            .ForMember(i => i.JobTitle, opt => opt.MapFrom(i => i.JobTitle))
@@ -55,7 +53,28 @@ namespace EnergyCollab.API
             CreateMap<OrgDetail,OrgDetailDto>()
                 .ForMember(org => org.OrgSummary, opt => opt.MapFrom(u => u.organization))
                 .ForMember(org => org.Id, opt => opt.MapFrom(u => u.Id))
-                .ReverseMap();            
+                .ReverseMap();
+
+            CreateMap<UserEmail, UserEmailDto>().ReverseMap();
+
+            CreateMap<UserEmailDtov2, UserEmail>().ReverseMap();
+            CreateMap<UserGroupDtov2, UserGroup>().ReverseMap();
+          
+
+            CreateMap<UserGroupDto, UserGroup>()
+                .ForMember(u => u.UserGroupName, opt => opt.MapFrom(u => u.UserGroupName))
+                .ForMember(u => u.UserName, opt => opt.MapFrom(u => u.UserName))
+                .ForMember(u => u.UserEmails, opt => opt.MapFrom(src => src.UserEmails.Select(email => new UserEmail { Email = email })))
+                .ForMember(u => u.CreatedDateTime, opt => opt.MapFrom(u => u.CreatedDateTime))
+                .ForMember(u => u.LastUpdatedDateTime, opt => opt.MapFrom(u => u.LastUpdatedDateTime))
+                .ReverseMap()
+                ;
+
+            CreateMap<SignUpDto, SignUp>()
+                .ForMember(u => u.Email, opt => opt.MapFrom(u => u.Email))
+                .ForMember(u => u.CandidateProfile, opt => opt.MapFrom(u => u.candidateProfileDto))
+                .ReverseMap();
+
         }
     }
 }

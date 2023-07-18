@@ -23,6 +23,12 @@ namespace EnergyCollab.API.Data
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<OrgDetail> OrgDetails { get; set; }
+        public DbSet<UserGroup> UserGroups { get; set; }
+        public DbSet<UserEmail> UserEmails { get; set; }
+
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

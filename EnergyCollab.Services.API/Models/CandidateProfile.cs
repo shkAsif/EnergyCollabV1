@@ -1,4 +1,8 @@
-﻿using System;
+﻿using EnergyCollab.Services.API.Models;
+using EnergyCollab.Web.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 namespace EnergyCollab.Models;
 public partial class CandidateProfile
@@ -42,4 +46,16 @@ public partial class CandidateProfile
     public string? Email { get; set; }
     public string? TelephoneNumber { get; set; }
     public string? Location { get; set; }
+
+    //One to One Mappings
+    public int SignUpId { get; set; }   
+    public SignUp  SignUp { get; set; }
+}
+public partial class CandidateProfileConfiguration : IEntityTypeConfiguration<CandidateProfile>
+{
+    public void Configure(EntityTypeBuilder<CandidateProfile> modelBuilder)
+    {
+        modelBuilder.HasIndex(e => e.Id);        
+        
+    }
 }

@@ -1,14 +1,40 @@
 html {
     font-size: 14px;
 }
-/*CandidateSubcriber*/
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*JobSeekerProfile*/
+.my-profile-container {
+    box-sizing: border-box;
+}
 
+.alert-sizing {
+    margin: 2rem;
+}
+
+.item {
+    border: 1px solid #ecf0f1;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.salary-inputs {
+    display: inline-block;
+}
+
+.upload-cv-feilds {
+    padding: 1rem;
+    border: 1px solid #ecf0f1;
+    border-radius: 0.5rem;
+}
+
+/*JobSeekerProfile END*/
+
+/*CandidateSubcriber*/
 .companies-list {
     border: 1px solid #dee2e6;
     padding: 1rem;

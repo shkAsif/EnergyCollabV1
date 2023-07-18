@@ -42,8 +42,10 @@ namespace EnergyCollab.API.Controllers
         {
             try
             {
+
                 CandidateProfile obj = _db.CandidateProfiles.First(u => u.Id == id);
                 _response.Result = _mapper.Map<CandidateProfileDto>(obj);
+                return _response;
             }
             catch (Exception ex)
             {

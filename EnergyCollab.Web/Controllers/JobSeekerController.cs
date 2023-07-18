@@ -89,6 +89,8 @@ namespace EnergyCollab.Web.Controllers
 
             return View("~/Views/JobSeeker/JobSeekerSearchVacancies.cshtml");
         }
+
+        
     }
 }
 

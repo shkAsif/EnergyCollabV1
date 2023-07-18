@@ -35,12 +35,12 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/candidateprofile"
             });
         }
-        public async Task<ResponseDto?> GetCandidateAsync(string userAccountId)
+        public async Task<ResponseDto?> GetCandidateAsync(string id)
         {
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.CandidateAPIBase + "/api/candidateprofile/GetByCode/" + userAccountId
+                Url = SD.CandidateAPIBase + "/api/candidateprofile/GetByCode/" + id
             });
         }
         public async Task<ResponseDto?> GetCandidateByIdAsync(int id)

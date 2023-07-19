@@ -35,7 +35,7 @@ function CompleteSearch() {
         OrderBy: $('#inputOrderBy').val(),
         SearchPhrase: $('#inputSearchPhrase').val()
     };
-    debugger;
+    
     var searchPhase = $('#inputSearchPhrase').val()
     $.ajax({
         url: '/JobSeeker/CompleteSearchVacancies',
@@ -52,7 +52,6 @@ function CompleteSearch() {
 }
 function getComapnies() {
 
-    debugger;
 
 
     var searchPhase = $('#inputSearchPhrase').val()

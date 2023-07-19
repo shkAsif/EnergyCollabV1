@@ -49,6 +49,10 @@ namespace EnergyCollab.Web.Controllers
                 }).ToList();
                 ViewData["countries"] = countrySelectList;
 
+
+
+
+
 			}
             else
             {

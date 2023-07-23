@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+
 namespace EnergyCollab.Models;
 public partial class CandidateProfile
 {
@@ -47,9 +48,12 @@ public partial class CandidateProfile
     public string? TelephoneNumber { get; set; }
     public string? Location { get; set; }
 
-    //One to One Mappings
+    //One to One Mapping
     public int SignUpId { get; set; }   
     public SignUp  SignUp { get; set; }
+    //One to One Mapping
+    //public int FileDetailId { get; set; }
+    //public FileDetail FileDetail { get; set; }
 }
 public partial class CandidateProfileConfiguration : IEntityTypeConfiguration<CandidateProfile>
 {

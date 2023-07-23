@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EnergyCollab.Web.Models;
 using EnergyCollab.Services.API.Models;
+
 namespace EnergyCollab.API.Data
 {
     public class AppDbContext : DbContext
@@ -25,7 +26,7 @@ namespace EnergyCollab.API.Data
         public DbSet<OrgDetail> OrgDetails { get; set; }
         public DbSet<UserGroup> UserGroups { get; set; }
         public DbSet<UserEmail> UserEmails { get; set; }
-
+        public DbSet<FileDetail> FileDetails { get; set; }
 
 
 

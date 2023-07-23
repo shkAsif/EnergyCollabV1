@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnergyCollab.Services.API.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ namespace EnergyCollab.API.Dto
 {
     public class CandidateProfileDto
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public Guid? UserAccountId { get; set; } = Guid.NewGuid();
         public string? CountryCode { get; set; } = string.Empty;
         public string? CityName { get; set; } = string.Empty;
@@ -45,6 +46,6 @@ namespace EnergyCollab.API.Dto
         public string? Title { get; set; } = string.Empty;
         public string? Email { get; set; } = string.Empty;
         public string? TelephoneNumber { get; set; } = string.Empty;
-        public string? Location { get; set; } = string.Empty;
+        public string? Location { get; set; } = string.Empty;       
     }
 }

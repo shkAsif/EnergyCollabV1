@@ -6,14 +6,16 @@
 <section id="content" class="main container">
     <div id="logo-container">
         <img class="logo-image animated fadeInDown" src="https://cdn.oildiversity.com/app/images/logo/logo.svg">
-
+.
+        <div data-bind="messageBox: messageDetail" class="col-md-4 m-auto mt-2" style="display:@ViewData["error"]">
+            <div class="alert alert-danger" role="alert">Please enter email address and password!</div>
+        </div>
         <form class="form-signin" id="login" data-bind="visible: !isConfirmingSignin()" asp-action="Login">
             <h4 data-bind="text: config.systemType, visible: config.systemType!=='Production'"
                 style="display: none;">
                 Production
             </h4>
             <div class="control-group">
-                <div data-bind="messageBox: messageDetail" style="display: none;"></div>
                 <div class="form-group first-input col-md-4 m-auto mt-2">
                     <input asp-for="EmailId" class="form-control input-lg" type="text" name="EmailId" placeholder="Email address" />
                     <span asp-validation-for="EmailId" class="text-danger"></span>

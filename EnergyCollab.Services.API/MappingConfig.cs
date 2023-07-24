@@ -19,7 +19,7 @@ namespace EnergyCollab.API
         public MappingConfig()
         {          
 
-            CreateMap<CandidateProfileDto,CandidateProfile>().ReverseMap();
+         
             
             CreateMap<LoginDto, Login>().ReverseMap();
             CreateMap<ClientSignupDto, ClientSignup>().ReverseMap();
@@ -70,11 +70,36 @@ namespace EnergyCollab.API
                 .ReverseMap()
                 ;
 
-            CreateMap<SignUpDto, SignUp>()
+            CreateMap<CandidateProfileDto, CandidateProfile>()
                 .ForMember(u => u.Email, opt => opt.MapFrom(u => u.Email))
-                .ForMember(u => u.CandidateProfile, opt => opt.MapFrom(u => u.candidateProfileDto))
+                //.ForMember(u => u.FileDetail, opt => opt.MapFrom(u => u.fileDetailDto))
                 .ReverseMap();
 
+           
+
+            CreateMap<FileDetailDto, FileDetail>().ReverseMap();
+
+            //CreateMap<SignUpDto, CandidateProfileDto>().ReverseMap();
+            //CreateMap<SignUpDto, FileDetailDto>().ReverseMap();
+
+            CreateMap<SignUpDto, SignUp>().ReverseMap();
+            //    .ForMember(u => u.Email, opt => opt.MapFrom(u => u.Email))
+            //    .ForMember(u => u.CandidateProfile, opt => opt.MapFrom(u => u.candidateProfileDto))
+            //    .ForPath(u => u.FileDetail.FileName, opt => opt.MapFrom(u => u.fileDetailDto.FileName))
+            //    .ForPath(u => u.FileDetail.FileType, opt => opt.MapFrom(u => u.fileDetailDto.FileType))
+            //    .ForPath(u => u.FileDetail.FileData, opt => opt.MapFrom(u => u.fileDetailDto.FileData))
+            //;
+
+            CreateMap<CandidateProfileDtoV2, SignUp>()
+
+                .ForPath(u => u.CandidateProfile.UserAccountId, opt => opt.MapFrom(u => u.UserAccountId))
+                .ForPath(u => u.CandidateProfile.CountryCode, opt => opt.MapFrom(u => u.CountryCode))
+                .ForPath(u => u.CandidateProfile.CityName, opt => opt.MapFrom(u => u.CityName))
+                //.ForPath(u => u.FileDetail.FileName, opt => opt.MapFrom(u => u.fileUploadDto.FileDetails.FileName))
+                //.ForPath(u => u.FileDetail.FileType, opt => opt.MapFrom(u => u.fileUploadDto.FileType))
+                //.ForPath(u => u.FileDetail.FileData, opt => opt.MapFrom(u => Helper.FileDetails(u.fileUploadDto.FileDetails)))
+                .ReverseMap()
+                ;
         }
     }
 }

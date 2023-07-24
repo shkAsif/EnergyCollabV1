@@ -1,4 +1,8 @@
-﻿namespace EnergyCollab.Services.API.HelperMethod
+﻿using EnergyCollab.API.Dto;
+using EnergyCollab.Web.Models;
+using System.IO;
+
+namespace EnergyCollab.Services.API.HelperMethod
 {
     public static class Helper
     {
@@ -11,6 +15,22 @@
                 3 => "PartTime"
             };
             return result;
+        }
+        public enum FileType
+        {
+            PDF = 1,
+            DOCX = 2
+        }
+
+        public static byte[] FileDetails(IFormFile formFile)
+        {
+            byte[]? fileData;
+            using (var stream = new MemoryStream())
+            {
+                formFile.CopyTo(stream);
+                fileData = stream.ToArray();
+            }
+            return fileData;
         }
     }
 }

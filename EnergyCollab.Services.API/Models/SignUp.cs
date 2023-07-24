@@ -19,14 +19,8 @@ namespace EnergyCollab.Web.Models
 
         //One to One Mapping
         public CandidateProfile CandidateProfile { get; set; }
+        public FileDetail FileDetail { get; set; }
 
-
-        //Contact Information : 7property
-        //Social Links : 3 property
-        //Primary Information : 4 property
-        //Professional Background and Preferences 9 property
-        //Upload CV:
-        //Summary:
     }
     public partial class SignUpConfiguration : IEntityTypeConfiguration<SignUp>
     {
@@ -38,6 +32,12 @@ namespace EnergyCollab.Web.Models
             modelBuilder.HasOne(u => u.CandidateProfile)
                 .WithOne(e => e.SignUp)
                 .HasForeignKey<CandidateProfile>(e => e.SignUpId);
+
+            //One-To-One FileDetail
+            modelBuilder.HasOne(u => u.FileDetail)
+                .WithOne(e => e.SignUp)
+                .HasForeignKey<FileDetail>(e => e.SignUpId);
+
         }
     }
 }

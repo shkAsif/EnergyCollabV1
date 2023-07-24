@@ -45,15 +45,10 @@ namespace EnergyCollab.Services.API.Controllers
         {
             try
             {
-
-                //if (!ModelState.IsValid)
-                //{
-                //    return BadRequest(ModelState);
-                //}
-
+                //signUpDto.fileDetailDto.FileData = new byte[0];
                 SignUp signUp = _mapper.Map<SignUp>(signUpDto);
-                _db.SignUps.Add(signUp);
-                _db.SaveChanges();
+                await _db.SignUps.AddAsync(signUp);
+                await _db.SaveChangesAsync();
                 _response.Result = _mapper.Map<SignUpDto>(signUp);
 
                 return Ok(_response);

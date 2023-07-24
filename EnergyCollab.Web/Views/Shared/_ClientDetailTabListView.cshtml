@@ -1,4 +1,7 @@
-﻿@{
+﻿@using EnergyCollab.Web.Models
+@model IEnumerable<OrganizationDto>
+
+@{
     ViewData["IncludeHeader"] = false;
 }
     <style>
@@ -63,7 +66,7 @@
 
             <div>
                 @{
-                    @for (var i = 0; i <= 5; i++)
+                    @foreach (var item in Model)
                     {
                         <div class="col-md-11 mt-4 companies-list">
                             <div class="col-md-1 mobileLogo">
@@ -72,7 +75,7 @@
                                      src="https://cdn.oildiversity.com/app/images/logo/logo-solo.png">
                             </div>
                             <span class="title companyNameForSearch"
-                                  data-bind="text: name">Optimal</span>
+                                  data-bind="text: name"></span>
 
                             <div class="tile-confirmation make-danger"
                                  data-bind="visible: id() === $root.selectedItemId() &amp;&amp; $root.isDeleting()"
@@ -89,9 +92,8 @@
 
                                 <div class="col-md-12" style="padding:0px;">
                                     <span class="tile-label"><i class="fa fa-user"></i></span>
-                                    <span data-bind="text: $parent.owner.person.names.fullName">
-                                        Steve
-                                        Jobs
+                                    <span>
+                                        @item.Name
                                     </span>
                                 </div>
                                 <div class="col-md-12" style="padding:0px;">

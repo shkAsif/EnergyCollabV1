@@ -52,7 +52,7 @@ function CompleteSearch() {
 }
 function getComapnies() {
 
-
+[]
 
     var searchPhase = $('#inputSearchPhrase').val()
     $.ajax({

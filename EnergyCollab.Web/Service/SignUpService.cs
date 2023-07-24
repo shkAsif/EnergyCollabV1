@@ -37,5 +37,14 @@ namespace EnergyCollab.Web.Service
                 Url = SD.CandidateAPIBase + "/api/client/ClientSignUp"
             });
         }
+
+        public async Task<ResponseDto?> GetOrgShortSummary()
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.GET,              
+                Url = SD.CandidateAPIBase + "/api/org/GetAll"
+            });
+        }
     }
 }

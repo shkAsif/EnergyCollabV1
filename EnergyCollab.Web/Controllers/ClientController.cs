@@ -2,7 +2,9 @@
 using EnergyCollab.Web.Service;
 using EnergyCollab.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Newtonsoft.Json;
 using System.Drawing.Drawing2D;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace EnergyCollab.Web.Controllers
@@ -42,11 +44,50 @@ namespace EnergyCollab.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> ClientTabs(string tabId)
         {
+            ResponseDto? response = await _signUpService.GetOrgShortSummary();
+           
+            List<OrganizationDto> organizationsShortSummry = JsonConvert.DeserializeObject<List<OrganizationDto>>(Convert.ToString(response.Result));
+            ViewData["Companies"] = organizationsShortSummry;
+            if (string.IsNullOrEmpty(tabId))
+            {
+
+                return View("~/Views/JobSeeker/jobSeekerProfile.cshtml"); // default view 
+            }
+
+            if(tabId == "1")
+            {
+                //ResponseDto? response = await _signUpService.GetOrgShortSummary();
+
+                //if (response != null && response.IsSuccess && tabId == "1")
+                //{
+                    //List<OrganizationDto> organizationsShortSummry = JsonConvert.DeserializeObject<List<OrganizationDto>>(Convert.ToString(response.Result));
+
+                    ////companies.Add("Google");
+                    ////companies.Add("Optimal");
+                    //ViewData["Companies"] = organizationsShortSummry;
+                    return View("~/Views/Shared/_ClientDetailTabListView.cshtml", organizationsShortSummry);
+                    //var countrySelectList = countries.Select(c => new SelectListItem
+                    //{
+                    //    Value = c.CountryCode,
+                    //    Text = c.Name
+                    //}).ToList();
+                    //ViewData["countries"] = countrySelectList;
+                //}
+                //else
+                //{
+                //    TempData["error"] = response?.Message;
+                //}
+            }
             List<string> companies = new List<string>();
             List<string> userGroups = new List<string>();
             List<string> securityRights = new List<string>();
             List<string> templates = new List<string>();
             List<string> candidateSubscribers = new List<string>();
+
+           
+
+
+
 
             companies.Add("Optimal");
             companies.Add("Google");

@@ -90,6 +90,16 @@ namespace EnergyCollab.API
             //    .ForPath(u => u.FileDetail.FileData, opt => opt.MapFrom(u => u.fileDetailDto.FileData))
             //;
 
+            CreateMap<CandidateProfileDtoV2, SignUp>()
+
+                .ForPath(u => u.CandidateProfile.UserAccountId, opt => opt.MapFrom(u => u.UserAccountId))
+                .ForPath(u => u.CandidateProfile.CountryCode, opt => opt.MapFrom(u => u.CountryCode))
+                .ForPath(u => u.CandidateProfile.CityName, opt => opt.MapFrom(u => u.CityName))
+                //.ForPath(u => u.FileDetail.FileName, opt => opt.MapFrom(u => u.fileUploadDto.FileDetails.FileName))
+                //.ForPath(u => u.FileDetail.FileType, opt => opt.MapFrom(u => u.fileUploadDto.FileType))
+                //.ForPath(u => u.FileDetail.FileData, opt => opt.MapFrom(u => Helper.FileDetails(u.fileUploadDto.FileDetails)))
+                .ReverseMap()
+                ;
         }
     }
 }
